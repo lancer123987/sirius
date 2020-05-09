@@ -1,2 +1,2 @@
 # sirius
-sirius's website
+Sirius's website
