@@ -13,15 +13,15 @@ $(document).ready(function () {
 
     var db = firebase.firestore();
 
-    function storedata() {
-        db.collection("SiriusMember").doc("002").set({
-            name: ["Lancer", "00"]
-        });
-    }
-
     $('#submit').click(function () {
-        db.collection("SiriusMember").doc("002").set({
-            name: ["Lancer", "00"]
+        var num = $('#num').val();
+        var name = $('#name').val();
+        var hobit_p = $('#hobit_p').val();
+        var hobit_h = $('#hobit_h').val();
+        db.collection("SiriusMember").doc(num).set({
+            name: ["Lancer", name],
+            hobit_p: hobit_p,
+            hobit_h: hobit_h
         });
     });
 });
