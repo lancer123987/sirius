@@ -23,17 +23,26 @@
 
     </main>
 </body>
-<!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
-
-<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+<!-- The core Firebase JS SDK is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-app.js"></script>
 
-<!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
-<script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-analytics.js"></script>
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
 
-<!-- Add Firebase products that you want to use -->
-<script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-firestore.js"></script>
+<script>
+    // Your web app's Firebase configuration
+    var firebaseConfig = {
+        apiKey: "AIzaSyDlA_6VGaaEOogKMxFFaNvgyPUkBMsQfUg",
+        authDomain: "baseballsirius.firebaseapp.com",
+        databaseURL: "https://baseballsirius.firebaseio.com",
+        projectId: "baseballsirius",
+        storageBucket: "baseballsirius.appspot.com",
+        messagingSenderId: "254226143983",
+        appId: "1:254226143983:web:85852267eecb7dde"
+    };
+    // Initialize Firebase
+    firebase.initializeApp(firebaseConfig);
+</script>
 <script src="js/common/jquery-3.4.1.min.js"></script>
 <script src="js/data.js"></script>
 
