@@ -1,3 +1,32 @@
 body {
     background: #1E2846;
 }
+
+.form {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 10px 5px;
+    font-size: 16px;
+    outline: none;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+}
+
+select {
+    width: calc(100% + 14px);
+}
+
+.form button {
+    background: rgba(255, 255, 255, .7);
+    border: none;
+    padding: 10px;
+}
