@@ -7,7 +7,6 @@ $(document).ready(function() {
         var adversary = $('.adversary').val();
         var weather = $('.weather').val();
         var docName = gameType + date
-            // var docName = docName.toString();
         console.log(docName);
         db.collection('gameName').doc(docName).set({
             league: league,
@@ -16,19 +15,29 @@ $(document).ready(function() {
             weather: weather
         });
         db.collection("game").doc(docName).set({});
+        $('.gameData').hide();
+        $('.game').fadeIn();
     });
-    // $('#submit').click(function() {
-    //     var pitcher = $('.pitcher').val();
-    //     var hobit_h = $('.hobit_h').val();
-    //     var nick = $('#nick').val();
-    //     var hobit_p = $('#hobit_p').val();
-    //     var hobit_h = $('#hobit_h').val();
-    //     var size_head = $('#size_head').val();
-    //     var size_clothes = $('#size_clothes').val();
-    //     db.collection("SiriusMember").doc(num).set({
-    //         pitcher: pitcher,
-    //         hobit: [hobit_p, hobit_h],
-    //         size: [size_head, size_clothes],
-    //     });
-    // });
+    $('.game_submit').click(function() {
+        var date = $('.date').val();
+        var gameType = $('.gameType').val();
+        var docName = gameType + date
+            //
+        var pitcher = $('.pitcher').val();
+        var hobit_h = $('.hobit_h').val();
+        var hit = $('.hit').val();
+        var situation = $('.situation').val();
+        var result = $('.result').val();
+        var direction = $('.direction').val();
+        var hit_type = $('.hit_type').val();
+        db.collection("game").doc(docName).set({
+            pitcher: pitcher,
+            hobit_h: hobit_h,
+            hit: hit,
+            situation: situation,
+            result: result,
+            direction: direction,
+            hit_type: hit_type
+        });
+    });
 });

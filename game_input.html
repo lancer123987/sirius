@@ -44,13 +44,13 @@
             </div>
             <div class="game">
                 <input class="pitcher" type="text" name="pitcher" placeholder="投手背號">
-                <select id="hobit_h">
+                <select class="hobit_h">
                     <option value="右打">右打</option>
                     <option value="左打">左打</option>
                 </select>
                 <input class="hit" type="text" name="hit" placeholder="打者背號">
                 <input class="situation" type="text" name="situation" placeholder="好壞球">
-                <select id="hobit_p">
+                <select class="result">
                     <option value="" disabled selected hidden>結果</option>
                     <option value="三振">三振</option>
                     <option value="保送">保送</option>
@@ -60,7 +60,7 @@
                     <option value="高飛">高飛</option>
                     <option value="不死三振">不死三振</option>
                 </select>
-                <select id="hobit_p">
+                <select class="direction">
                     <option value="" disabled selected hidden>方向</option>
                     <option value="捕手">捕手</option>
                     <option value="投手">投手</option>
@@ -72,31 +72,32 @@
                     <option value="中外">中外</option>
                     <option value="右外">右外</option>
                 </select>
-                <select id="hobit_p">
-                    <option value="捕手">一安</option>
-                    <option value="投手">二安</option>
-                    <option value="一壘">三安</option>
-                    <option value="二壘">全壘打</option>
-                    <option value="三壘">失誤</option>
+                <select class="hit_type">
+                    <option value="一安">一安</option>
+                    <option value="二安">二安</option>
+                    <option value="三安">三安</option>
+                    <option value="全壘打">全壘打</option>
+                    <option value="失誤">失誤</option>
                     <option value="野選">野選</option>
                 </select>
                 <input class="remark" type="text" name="remark" placeholder="備註">
-                <button id="submit">送出</button>
+                <button class="game_submit">送出</button>
             </div>
         </div>
     </main>
 </body>
+
 <!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
 
-<!-- The core Firebase JS SDK is always required and must be listed first -->
+<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
 <script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-app.js"></script>
 
 <!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
-<script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-analytics.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-analytics.js"></script>
 
 <!-- Add Firebase products that you want to use -->
-<script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-auth.js"></script>
-<script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-firestore.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-firestore.js"></script>
 
 <!-- TODO: Add SDKs for Firebase products that you want to use
      https://firebase.google.com/docs/web/setup#available-libraries -->
