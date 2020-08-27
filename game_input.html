@@ -1,0 +1,108 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width" />
+    <title>比賽資料登錄│Sirius</title>
+    <!--禁止爬蟲-->
+    <meta name="robots" content="noindex, nofollow">
+    <meta name="googlebot" content="noindex, nofollow">
+    <meta name="description" content="">
+    <meta property="og:title" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="img/logo.png">
+    <meta property="og:description" content="">
+    <link rel="icon" href="img/common/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="css/common/common.css">
+    <link rel="stylesheet" href="css/game_input.css">
+</head>
+
+<body>
+    <main>
+        <div class="form">
+            <h1>比賽資料登錄</h1>
+            <div class="gameData">
+                <input class="date" type="date" name="date">
+                <select class="gameType">
+                    <option value="" disabled selected hidden>賽事類型</option>
+                    <option value="s">正式賽</option>
+                    <option value="F">友誼賽</option>
+                </select>
+                <input class="league" type="text" name="league" placeholder="聯盟名稱">
+                <input class="place" type="text" name="place" placeholder="場地">
+                <input class="adversary" type="text" name="adversary" placeholder="對手">
+                <select class="weather">
+                    <option value="" disabled selected hidden>天氣</option>
+                    <option value="sun">晴天</option>
+                    <option value="cloudy">陰天</option>
+                    <option value="wind">強風</option>
+                    <option value="typhoon">颱風</option>
+                    <option value="tornado">龍捲風</option>
+                </select>
+                <button class="gameData__submit">送出</button>
+            </div>
+            <div class="game">
+                <input class="pitcher" type="text" name="pitcher" placeholder="投手背號">
+                <select id="hobit_h">
+                    <option value="右打">右打</option>
+                    <option value="左打">左打</option>
+                </select>
+                <input class="hit" type="text" name="hit" placeholder="打者背號">
+                <input class="situation" type="text" name="situation" placeholder="好壞球">
+                <select id="hobit_p">
+                    <option value="" disabled selected hidden>結果</option>
+                    <option value="三振">三振</option>
+                    <option value="保送">保送</option>
+                    <option value="觸身">觸身</option>
+                    <option value="滾地">滾地</option>
+                    <option value="平飛">平飛</option>
+                    <option value="高飛">高飛</option>
+                    <option value="不死三振">不死三振</option>
+                </select>
+                <select id="hobit_p">
+                    <option value="" disabled selected hidden>方向</option>
+                    <option value="捕手">捕手</option>
+                    <option value="投手">投手</option>
+                    <option value="一壘">一壘</option>
+                    <option value="二壘">二壘</option>
+                    <option value="三壘">三壘</option>
+                    <option value="游擊">游擊</option>
+                    <option value="左外">左外</option>
+                    <option value="中外">中外</option>
+                    <option value="右外">右外</option>
+                </select>
+                <select id="hobit_p">
+                    <option value="捕手">一安</option>
+                    <option value="投手">二安</option>
+                    <option value="一壘">三安</option>
+                    <option value="二壘">全壘打</option>
+                    <option value="三壘">失誤</option>
+                    <option value="野選">野選</option>
+                </select>
+                <input class="remark" type="text" name="remark" placeholder="備註">
+                <button id="submit">送出</button>
+            </div>
+        </div>
+    </main>
+</body>
+<!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-app.js"></script>
+
+<!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+<script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-analytics.js"></script>
+
+<!-- Add Firebase products that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.18.0/firebase-firestore.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+
+<script src="js/common/jquery-3.4.1.min.js"></script>
+<script src="js/common/firebase.js"></script>
+<script src="js/game_input.js"></script>
+
+</html>
