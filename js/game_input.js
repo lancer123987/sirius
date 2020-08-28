@@ -3,15 +3,20 @@ $(document).ready(function () {
     $(window).scroll(function () {
         var after = $(window).scrollTop();
         if (before < after) {
-            $('.situation__bt').fadeOut()
+            $('.situation__bt').stop().fadeOut()
             before = after;
         };
         if (before > after) {
-            $('.situation__bt').fadeIn()
+            $('.situation__bt').stop().fadeIn()
             before = after;
         };
     });
-
+    $(window).scroll(function () {
+        last = $("body").height() - $(window).height()
+        if ($(window).scrollTop() >= last) {
+            $('.situation__bt').stop().fadeOut()
+        }
+    })
 
 
     /**寫入資料**/
