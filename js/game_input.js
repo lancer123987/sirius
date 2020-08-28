@@ -1,12 +1,13 @@
-$(document).ready(function() {
-    $('.gameData__submit').click(function() {
+$(document).ready(function () {
+    $('.gameData__submit').click(function () {
         var date = $('.date').val();
         var gameType = $('.gameType').val();
+        var frequency = $('.frequency').val();
         var league = $('.league').val();
         var place = $('.place').val();
         var adversary = $('.adversary').val();
         var weather = $('.weather').val();
-        var docName = gameType + date
+        var docName = gameType + date + '-' + frequency;
         console.log(docName);
         db.collection('gameName').doc(docName).set({
             league: league,
@@ -18,11 +19,12 @@ $(document).ready(function() {
         $('.gameData').hide();
         $('.game').fadeIn();
     });
-    $('.game_submit').click(function() {
+    $('.game_submit').click(function () {
         var date = $('.date').val();
         var gameType = $('.gameType').val();
-        var docName = gameType + date
-            //
+        var frequency = $('.frequency').val();
+        var docName = gameType + date + '-' + frequency;
+        //
         var pitcher = $('.pitcher').val();
         var hobit_h = $('.hobit_h').val();
         var hit = $('.hit').val();
@@ -30,7 +32,7 @@ $(document).ready(function() {
         var result = $('.result').val();
         var direction = $('.direction').val();
         var hit_type = $('.hit_type').val();
-        db.collection("game").doc(docName).set({
+        db.collection("game").doc(docName).update({
             pitcher: pitcher,
             hobit_h: hobit_h,
             hit: hit,

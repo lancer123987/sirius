@@ -29,6 +29,12 @@
                     <option value="s">正式賽</option>
                     <option value="F">友誼賽</option>
                 </select>
+                <select class="frequency">
+                    <option value="1">第一場</option>
+                    <option value="2">第二場</option>
+                    <option value="3">第三場</option>
+                    <option value="4">第四場</option>
+                </select>
                 <input class="league" type="text" name="league" placeholder="聯盟名稱">
                 <input class="place" type="text" name="place" placeholder="場地">
                 <input class="adversary" type="text" name="adversary" placeholder="對手">
@@ -42,13 +48,35 @@
                 </select>
                 <button class="gameData__submit">送出</button>
             </div>
-            <div class="game">
-                <input class="pitcher" type="text" name="pitcher" placeholder="投手背號">
-                <select class="hobit_h">
-                    <option value="右打">右打</option>
-                    <option value="左打">左打</option>
-                </select>
-                <input class="hit" type="text" name="hit" placeholder="打者背號">
+            <div class="game" style="display: block;">
+                <div class="game__title">
+                    <select class="round">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                        <option value="11">11</option>
+                        <option value="12">12</option>
+                    </select>
+                    <select class="round__turn">
+                        <option value="top">上</option>
+                        <option value="bottom">下</option>
+                    </select>
+                    <input class="pitcher" type="text" name="pitcher" placeholder="投手背號">
+                </div>
+                <div class="hit_name">
+                    <select class="hobit_h">
+                        <option value="右打">右打</option>
+                        <option value="左打">左打</option>
+                    </select>
+                    <input class="hit" type="text" name="hit" placeholder="打者背號">
+                </div>
                 <input class="situation" type="text" name="situation" placeholder="好壞球">
                 <select class="result">
                     <option value="" disabled selected hidden>結果</option>
@@ -83,6 +111,12 @@
                 <input class="remark" type="text" name="remark" placeholder="備註">
                 <button class="game_submit">送出</button>
             </div>
+        </div>
+        <div class="situation__bt">
+            <div class="situation__bt__item"></div>
+            <div class="situation__bt__item"></div>
+            <div class="situation__bt__item"></div>
+            <div class="situation__bt__item"></div>
         </div>
     </main>
 </body>
