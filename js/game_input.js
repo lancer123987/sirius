@@ -1,4 +1,20 @@
 $(document).ready(function () {
+    var before = $(window).scrollTop();
+    $(window).scroll(function () {
+        var after = $(window).scrollTop();
+        if (before < after) {
+            $('.situation__bt').fadeOut()
+            before = after;
+        };
+        if (before > after) {
+            $('.situation__bt').fadeIn()
+            before = after;
+        };
+    });
+
+
+
+    /**寫入資料**/
     $('.gameData__submit').click(function () {
         var date = $('.date').val();
         var gameType = $('.gameType').val();

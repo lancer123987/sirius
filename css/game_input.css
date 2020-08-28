@@ -101,13 +101,13 @@ input {
 
 .situation__bt {
     position: fixed;
-    bottom: 0;
+    bottom: -5px;
     left: 0;
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
-    background: rgba(0, 0, 0, .7);
+    background: rgba(158, 123, 123, 0.7);
     padding: 20px 0 40px 0;
 }
 
