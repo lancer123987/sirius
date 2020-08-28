@@ -98,3 +98,40 @@ input {
 .situation {
     pointer-events: none;
 }
+
+.situation__bt {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    background: rgba(0, 0, 0, .7);
+    padding: 20px 0 40px 0;
+}
+
+.situation__bt__item {
+    width: calc(100% / 3 - 10px);
+    text-align: center;
+    padding: 10px 0;
+    margin: 0 0 10px 0;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, .9);
+    transition: background-color .2s ease-in-out;
+}
+
+.situation__bt__item-delete {
+    width: calc(100% - 10px);
+    text-align: center;
+    padding: 10px 0;
+    margin: 0;
+    border-radius: 10px;
+    background: rgba(255, 255, 255, .9);
+    transition: background-color .2s ease-in-out;
+}
+
+.situation__bt__item:hover,
+.situation__bt__item-delete:hover {
+    background: #fff;
+}
