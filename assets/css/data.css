@@ -10,10 +10,21 @@ main {
 }
 
 .data__inner__head {
+    display: flex;
+    align-items: center;
+    align-content: center;
     width: 100%;
     padding: 20px 30px;
     margin: 0 10px 10px 10px;
-    background: var(--menuBg);
+    background: url(../images/common/logo.svg) top right no-repeat var(--menuBg);
+    background-size: 300px auto;
+}
+
+.data__inner__head__number,
+.data__inner__head__name {
+    font-size: 28px;
+    margin: 0 0 0 20px;
+    font-weight: bold;
 }
 
 .data__item {
