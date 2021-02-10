@@ -1,1 +1,39 @@
 @charset "UTF-8";
+main {
+    width: 100%;
+    padding: 70px 60px 60px 150px;
+}
+
+.data__inner {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.data__inner__head {
+    width: 100%;
+    padding: 20px 30px;
+    margin: 0 10px 10px 10px;
+    background: var(--menuBg);
+}
+
+.data__item {
+    padding: 20px 30px;
+    margin: 0 10px 10px 10px;
+    background: var(--menuBg);
+}
+
+.data__item__title {
+    width: 100%;
+    font-size: 14px;
+    letter-spacing: 1px;
+    word-spacing: 5px;
+    margin: 0 0 10px 0;
+    line-height: 1.2;
+}
+
+.data__item__digital {
+    width: 100%;
+    font-size: 32px;
+    line-height: 1;
+    font-weight: bold;
+}
