@@ -38,6 +38,7 @@
 body,
 main,
 div,
+figure,
 dl,
 dt,
 dd,
@@ -153,6 +154,8 @@ body {
     width: 90px;
     height: 100%;
     background: var(--menuBg);
+    transition: left 1s ease-in-out, filter 1s ease-in-out;
+    z-index: 100;
 }
 
 .c-aside ul {
@@ -187,4 +190,51 @@ body {
 .c-aside ul li a img {
     width: 30px;
     margin: 0 auto 5px auto;
+}
+
+.c-fixedbg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: center no-repeat;
+    background-size: cover;
+    opacity: .4;
+    filter: blur(4px);
+    animation: fixedbg 10s ease-in-out infinite;
+}
+
+@keyframes fixedbg {
+    0% {
+        filter: blur(4px);
+    }
+    50% {
+        filter: blur(8px);
+    }
+    100% {
+        filter: blur(4px);
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    .c-aside {
+        left: -90px;
+        background: var(--main);
+    }
+    .c-aside.open {
+        left: 0;
+        filter: drop-shadow(4px 4px 10px rgba(255, 255, 255, .1));
+    }
+    .c-aside__bt {
+        content: '';
+        position: absolute;
+        top: calc(50% - 25px);
+        right: -25px;
+        display: block;
+        width: 25px;
+        height: 50px;
+        background: var(--main);
+        cursor: pointer;
+    }
 }
