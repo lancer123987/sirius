@@ -14,7 +14,7 @@
 
     <link rel="icon" href="assets/images/common_ico/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="assets/css/common/common.css">
-    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/member.css">
 </head>
 
 <body>
@@ -23,8 +23,27 @@
             <menu-item v-for=" item in menu" v-bind:item="item"></menu-item>
         </ul>
     </header>
-    <main>
-
+    <main class="member">
+        <div class="member__inner">
+            <a class="member__inner__item" href="data.html">
+                <figure class="member__inner__item__pic">
+                    <img src="assets/images/data/pic.jpg" alt="">
+                </figure>
+                <div class="member__inner__item__text">
+                    <p class="member__inner__item__text__number">02</p>
+                    <p class="member__inner__item__text__name">Lancer</p>
+                </div>
+            </a>
+            <a class="member__inner__item" href="data.html">
+                <figure class="member__inner__item__pic">
+                    <img src="assets/images/data/pic.jpg" alt="">
+                </figure>
+                <div class="member__inner__item__text">
+                    <p class="member__inner__item__text__number">02</p>
+                    <p class="member__inner__item__text__name">Lancer</p>
+                </div>
+            </a>
+        </div>
     </main>
     <footer></footer>
 </body>
@@ -32,5 +51,6 @@
 <script src="assets/js/common/vueData.js"></script>
 <script src="assets/js/common/plugin/jquery-3.4.1.min.js"></script>
 <script src="assets/js/common/common.js"></script>
+<script src="assets/js/member.js"></script>
 
 </html>
