@@ -20,25 +20,15 @@
 <body>
     <header>
         <ul id="mainMenu" class="c-mainMenu">
-            <li>
-                <a href="" title="Home">Home</a>
-            </li>
-            <li>
-                <a href="" title="Game">Game</a>
-            </li>
-            <li>
-                <a href="member.html" title="Member">Member</a>
-            </li>
-            <li>
-                <a href="" title="About">About</a>
-            </li>
+            <menu-item v-for=" item in menu" v-bind:item="item"></menu-item>
         </ul>
     </header>
     <main>
         <div class="c-fixedbg"></div>
-        <aside class="c-aside">
+        <aside id="memberAside" class="c-aside">
             <ul>
-                <li>
+                <member-menu-item v-for=" item in menu" v-bind:item="item"></member-menu-item>
+                <!-- <li>
                     <a href="" title="Basic"><img src="assets/images/common/icon_member_white.svg">Basic</a>
                 </li>
                 <li>
@@ -49,7 +39,7 @@
                 </li>
                 <li>
                     <a href="" title="Defend"><img src="assets/images/common/icon_glove_white.svg">Defend</a>
-                </li>
+                </li> -->
             </ul>
             <div class="c-aside__bt"></div>
         </aside>

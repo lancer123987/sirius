@@ -20,9 +20,6 @@
 <body>
     <header>
         <ul id="mainMenu" class="c-mainMenu">
-            <!-- <li v-for="todo in menu">
-                <a v-bind:href="{{ todo.listMenu[1] }}" v-bind:title="{{ todo.listMenu[0] }}">{{ todo.listMenu[0] }}</a>
-            </li> -->
             <menu-item v-for=" item in menu" v-bind:item="item"></menu-item>
         </ul>
     </header>
