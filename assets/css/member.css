@@ -12,7 +12,7 @@
 }
 
 .member__inner__item {
-    width: calc(33.33% - 80px);
+    width: calc(33.33% - 20px);
     display: flex;
     flex-wrap: wrap;
     align-items: center;
@@ -52,7 +52,7 @@
 
 @media only screen and (max-width: 767px) {
     .member__inner__item {
-        width: calc(50% - 80px);
+        width: calc(50% - 20px);
     }
 }
 
