@@ -228,6 +228,28 @@ header {
     animation: fixedbg 10s ease-in-out infinite;
 }
 
+.c-loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    justify-items: center;
+    justify-content: center;
+    width: 100%;
+    height: 100vh;
+    background: rgba(0, 0, 0, .7);
+    z-index: 999;
+}
+
+.c-loading p {
+    width: 100%;
+    font-size: 28px;
+    text-align: center;
+}
+
 @keyframes fixedbg {
     0% {
         filter: blur(4px);
