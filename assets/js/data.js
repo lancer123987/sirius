@@ -16,7 +16,16 @@ var mainMenu = new Vue({
     }
 })
 
+$(document).ready(function() {
+    let link = location.href.split('data.html?member')[1];
 
-// $(document).ready(function() {
+    $('.data__inner__head__number').text(link);
 
-// });
+    var db = firebase.firestore();
+    var ref = db.collection('SiriusMember').doc(link);
+    ref.get().then(doc => {
+        // console.log(doc.data());
+        memberName = doc.data().name[1];
+        $('.data__inner__head__name').text(doc.data().name[1]);
+    });
+});
