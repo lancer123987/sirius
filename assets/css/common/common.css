@@ -84,6 +84,13 @@ img {
     border: 0;
 }
 
+input,
+input:focus,
+select,
+select:focus {
+    outline: none;
+}
+
 address,
 caption,
 cite,

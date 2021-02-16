@@ -1,0 +1,46 @@
+@charset "UTF-8";
+@charset "UTF-8";
+main {
+    min-height: 100vh;
+    padding: 50px 0;
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-items: center;
+    justify-content: center;
+}
+
+.login {
+    width: 90%;
+    max-width: 300px;
+    margin: -50px auto 0 auto;
+}
+
+.login__title {
+    text-align: center;
+    font-size: 28px;
+    margin: 0 auto 40px auto;
+}
+
+.login input[type="text"],
+.login input[type="password"] {
+    width: 100%;
+    margin: 0 auto 20px auto;
+    padding: 10px;
+    font-size: 14px;
+}
+
+.login input[type="submit"] {
+    display: block;
+    margin: 0 auto;
+    background: #fff;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: opacity .4s ease-in-out;
+}
+
+.login input[type="submit"]:hover {
+    opacity: .7;
+}
