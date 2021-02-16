@@ -1,5 +1,8 @@
 @charset "UTF-8";
-@charset "UTF-8";
+.c-loading {
+    display: none;
+}
+
 main {
     min-height: 100vh;
     padding: 50px 0;

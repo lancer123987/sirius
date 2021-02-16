@@ -1,7 +1,6 @@
 $(document).ready(function() {
     var db = firebase.firestore();
     var ref = db.collection('SiriusMember');
-    let box = [];
     let boxNumber = [];
     let boxData = [];
     ref.get().then(querySnapshot => {

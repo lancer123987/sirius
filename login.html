@@ -27,12 +27,15 @@
         <form class="login">
             <p class="login__title">Login</p>
             <fieldset>
-                <input type="text" placeholder="Account">
-                <input type="password" placeholder="Password">
+                <input type="text" name="account" placeholder="Account" value="" required>
+                <input type="password" name="password" placeholder="Password" required>
             </fieldset>
-            <input type="submit" value="Submit">
+            <input class="j-login" type="submit" value="Submit">
         </form>
     </main>
+    <div class="c-loading">
+        <p>Loading...</p>
+    </div>
     <footer></footer>
 </body>
 
@@ -53,5 +56,6 @@
 <script src="assets/js/common/plugin/jquery-3.4.1.min.js"></script>
 <script src="assets/js/common/plugin/vue.js"></script>
 <script src="assets/js/common/common.js"></script>
+<script src="assets/js/login.js"></script>
 
 </html>
