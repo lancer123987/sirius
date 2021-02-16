@@ -23,6 +23,14 @@ $(document).ready(function() {
                 } else {
                     ref.doc(account).get().then(doc => {
                         if (doc.data().password == password) {
+                            //登入紀錄回傳
+                            var date = new Date();
+                            let now = date.getFullYear() + '-' + date.getMonth() + '-' + date.getDate() + '-' + date.getHours() + ':' + date.getMinutes() + ':' + date.getSeconds();
+                            var ref = db.collection('log');
+                            ref.doc(now).set({
+                                account: account
+                            });
+                            //頁面轉跳
                             window.location = "behind/system.html";
                         } else {
                             $('.c-loading').hide();
