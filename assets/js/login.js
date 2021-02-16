@@ -29,9 +29,10 @@ $(document).ready(function() {
                             var ref = db.collection('log');
                             ref.doc(now).set({
                                 account: account
-                            });
-                            //頁面轉跳
-                            window.location = "behind/system.html";
+                            }).then(() => {
+                                //頁面轉跳
+                                window.location = "behind/system.html";
+                            });;
                         } else {
                             $('.c-loading').hide();
                             alert('密碼錯誤');
