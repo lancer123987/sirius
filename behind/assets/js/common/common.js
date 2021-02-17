@@ -8,9 +8,8 @@ var mainMenu = new Vue({
     el: '#mainMenu',
     data: {
         menu: [
-            { listMenu: ['Game', 'game.html'] },
-            { listMenu: ['Member', 'member.html'] },
-            { listMenu: ['About', 'about.html'] }
+            { listMenu: ['Game', 'game_push.html'] },
+            { listMenu: ['Member', 'member_push.html'] }
         ]
     }
 })

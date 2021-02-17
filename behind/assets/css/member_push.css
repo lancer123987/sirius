@@ -1,0 +1,51 @@
+@charset "UTF-8";
+main {
+    width: 100%;
+    min-height: 100vh;
+    padding: 100px 0;
+    display: flex;
+    align-items: flex-start;
+    align-content: flex-start;
+    justify-items: center;
+    justify-content: center;
+}
+
+.form {
+    width: 100%;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.form__title {
+    margin: 0 0 20px 0;
+    text-align: center;
+    font-size: 24px;
+}
+
+input,
+select {
+    width: 100%;
+    padding: 10px 5px;
+    margin: 0 0 10px 0;
+    font-size: 16px;
+    outline: none;
+}
+
+input:focus,
+select:focus {
+    outline: none;
+}
+
+.form button {
+    display: block;
+    background: #fff;
+    border: none;
+    padding: 10px;
+    margin: 0 auto;
+    cursor: pointer;
+    transition: opacity .4s ease-in-out;
+}
+
+.form button:hover {
+    opacity: .7;
+}
