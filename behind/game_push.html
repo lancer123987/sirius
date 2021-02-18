@@ -38,13 +38,19 @@
                     <option value="3">第三場</option>
                     <option value="4">第四場</option>
                 </select>
-                <input class="league" type="text" name="league" placeholder="聯盟名稱">
-                <input class="place" type="text" name="place" placeholder="場地">
+                <select id="place" class="place" name="place">
+                    <option value="" hidden>場地</option>
+                </select>
                 <input class="adversary" type="text" name="adversary" placeholder="對手">
+                <select class="home">
+                    <option value="false">先攻</option>
+                    <option value="true">後攻</option>
+                </select>
                 <select class="weather">
                     <option value="" disabled selected hidden>天氣</option>
                     <option value="sun">晴天</option>
                     <option value="cloudy">陰天</option>
+                    <option value="rain">雨天</option>
                     <option value="wind">強風</option>
                     <option value="typhoon">颱風</option>
                     <option value="tornado">龍捲風</option>
@@ -54,22 +60,22 @@
             <div class="game" style="display: block;">
                 <div class="game__title">
                     <select class="round">
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                        <option value="4">4</option>
-                        <option value="5">5</option>
-                        <option value="6">6</option>
-                        <option value="7">7</option>
-                        <option value="8">8</option>
-                        <option value="9">9</option>
+                        <option value="01">1</option>
+                        <option value="02">2</option>
+                        <option value="03">3</option>
+                        <option value="04">4</option>
+                        <option value="05">5</option>
+                        <option value="06">6</option>
+                        <option value="07">7</option>
+                        <option value="08">8</option>
+                        <option value="09">9</option>
                         <option value="10">10</option>
                         <option value="11">11</option>
                         <option value="12">12</option>
                     </select>
                     <select class="round__turn">
-                        <option value="top">上</option>
-                        <option value="bottom">下</option>
+                        <option value="t">上</option>
+                        <option value="b">下</option>
                     </select>
                     <input class="pitcher" type="text" name="pitcher" placeholder="投手背號">
                 </div>
@@ -80,7 +86,7 @@
                     </select>
                     <input class="hit" type="text" name="hit" placeholder="打者背號">
                 </div>
-                <input class="situation" type="text" name="situation" placeholder="好壞球">
+                <input class="process" type="text" name="process" placeholder="好壞球">
                 <select class="result">
                     <option value="" disabled selected hidden>結果</option>
                     <option value="三振">三振</option>
