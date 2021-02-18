@@ -28,12 +28,14 @@ $(document).ready(function() {
 
     $('#gameType').change(function() {
         let league = $(this).val();
-        console.log(league);
-        ref.doc(league).get().then(querySnapshot => {
-            querySnapshot.forEach(doc => {
-                $('#gameYear').append('<option value=\"' + doc.id + '\">' + doc.id + '<\/option>');
-            });
+        var ref = db.collection('game').doc(league);
+        ref.get().then(doc => {
+            //querySnapshot.forEach(collection => {
+            console.log(collection.id);
+            // $('#gameYear').append('<option value=\"' + collection.id + '\">' + collection.id + '<\/option>');
+            //});
         });
+        $('#gameYear').show();
     });
     /**寫入資料**/
 

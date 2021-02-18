@@ -52,6 +52,10 @@ select:focus {
     opacity: .7;
 }
 
+#gameYear {
+    display: none;
+}
+
 .game {
     display: none;
 }
