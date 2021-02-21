@@ -85,14 +85,13 @@ $(document).ready(function() {
         let frequency = $('.frequency').val(); //單日比賽場次
         let docName = date + '-' + frequency; //比賽id建立
 
-        console.log(docName);
-
         let round = $('.round').val(); //當前局數
         let roundTurn = $('.round__turn').val(); //上下半局
 
         let roundName = roundTurn + round;
 
         let pitcher = $('.pitcher').val(); //投手背號
+        let hitterId = $('.hitterId').val(); //當局打序
         let hobit_h = $('.hobit_h').val(); //打者左右打
         let hit = $('.hit').val(); //打者背號
         let process = $('.process').val(); //過程
@@ -100,7 +99,7 @@ $(document).ready(function() {
         let direction = $('.direction').val(); //方向
         let hit_type = $('.hit_type').val(); //擊出結果
         let remark = $('.remark').val(); //備註
-        db.collection("game").doc(docName).collection(roundName).doc('hitter01').set({
+        db.collection("game").doc(docName).collection(roundName).doc('hitter' + hitterId).set({
             投手: pitcher,
             左右打: hobit_h,
             打者: hit,
@@ -110,5 +109,13 @@ $(document).ready(function() {
             擊出結果: hit_type,
             備註: remark
         });
+        $('.hit, .process, .remark').val('');
+    });
+
+    //過程輸入
+    $('.situation__bt__item').click(function() {
+        let ball = $(this).data('value');
+        let process = $('.process').val() + ball;
+        $('.process').val(process);
     });
 });

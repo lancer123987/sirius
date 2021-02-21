@@ -96,6 +96,10 @@ select:focus {
     margin: 0 0 20px 0;
 }
 
+.process {
+    letter-spacing: 5px;
+}
+
 .situation {
     pointer-events: none;
 }

@@ -57,7 +57,7 @@
                 </select>
                 <button class="gameData__submit">送出</button>
             </div>
-            <div class="game" style="display: block;">
+            <div class="game">
                 <div class="game__title">
                     <select class="round">
                         <option value="01">1</option>
@@ -79,6 +79,7 @@
                     </select>
                     <input class="pitcher" type="text" name="pitcher" placeholder="投手背號">
                 </div>
+                <input class="hitterId" type="text" name="hitterId" placeholder="當局打序">
                 <div class="hit_name">
                     <select class="hobit_h">
                         <option value="右打">右打</option>
@@ -99,6 +100,8 @@
                 </select>
                 <select class="direction">
                     <option value="" disabled selected hidden>方向</option>
+                    <option value=""></option>
+                    <option value="出局">出局</option>
                     <option value="捕手">捕手</option>
                     <option value="投手">投手</option>
                     <option value="一壘">一壘</option>
@@ -110,6 +113,8 @@
                     <option value="右外">右外</option>
                 </select>
                 <select class="hit_type">
+                    <option value=""></option>
+                    <option value="出局">出局</option>
                     <option value="一安">一安</option>
                     <option value="二安">二安</option>
                     <option value="三安">三安</option>
@@ -118,7 +123,7 @@
                     <option value="野選">野選</option>
                 </select>
                 <input class="remark" type="text" name="remark" placeholder="備註">
-                <button class="game_submit">送出</button>
+                <button class="game_submit">下個打者</button>
             </div>
         </div>
         <div class="situation__bt">
