@@ -1,3 +1,12 @@
+//logo
+Vue.component('logo', {
+    template: '<a href="index.html"><img src="assets/images/common/logo_word.svg" alt="Sirius"></a>'
+})
+
+var loho = new Vue({
+    el: '#logo',
+})
+
 //主選單
 Vue.component('menu-item', {
     props: ['item'],
@@ -10,7 +19,8 @@ var mainMenu = new Vue({
         menu: [
             { listMenu: ['Game', 'game.html'] },
             { listMenu: ['Member', 'member.html'] },
-            { listMenu: ['About', 'about.html'] }
+            { listMenu: ['About', 'about.html'] },
+            { listMenu: ['Login', 'login.html'] }
         ]
     }
 })

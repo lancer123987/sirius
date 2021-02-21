@@ -1,3 +1,12 @@
+//logo
+Vue.component('logo', {
+    template: '<a href="../index.html"><img src="assets/images/common/logo_word.svg" alt="Sirius"></a>'
+})
+
+var loho = new Vue({
+    el: '#logo',
+})
+
 //主選單
 Vue.component('menu-item', {
     props: ['item'],

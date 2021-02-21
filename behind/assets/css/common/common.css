@@ -150,6 +150,20 @@ header {
     z-index: 999;
 }
 
+.logo {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    width: 200px;
+    transform: translateY(-50%);
+    transition: opacity .4s ease-in-out;
+    z-index: 10;
+}
+
+.logo:hover {
+    opacity: .7;
+}
+
 .c-mainMenu {
     top: 20px;
     display: flex;
