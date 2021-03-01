@@ -1,11 +1,1 @@
 @charset "UTF-8";
-.login {
-    width: 90%;
-    max-width: 500px;
-    margin: 0 auto;
-}
-
-.login__title {
-    text-align: center;
-    font-size: 28px;
-}

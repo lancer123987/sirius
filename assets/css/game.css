@@ -1,0 +1,64 @@
+@charset "UTF-8";
+.game {
+    width: calc(100% - 60px);
+    margin: 0 auto;
+    padding: 100px 0 0 0;
+    text-align: center;
+}
+
+.game__title {
+    text-align: center;
+    font-size: 28px;
+}
+
+.game__board {
+    display: inline-block;
+    width: auto;
+    max-width: 100%;
+    margin: 0 auto;
+    overflow-x: auto;
+}
+
+.game__board::-webkit-scrollbar {
+    width: 6px;
+    height: 6px;
+}
+
+.game__board::-webkit-scrollbar-thumb {
+    background-color: #999;
+}
+
+.game__board::-webkit-scrollbar-track {
+    background-color: #ccc;
+    border-left: 0px;
+}
+
+.game__board__block {
+    display: flex;
+    align-items: stretch;
+    align-content: stretch;
+    justify-items: flex-start;
+    justify-content: flex-start;
+    width: 100%;
+}
+
+.game__board__block p {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-items: center;
+    justify-content: center;
+    width: 50px;
+    border: 1px solid #fff;
+    font-size: 16px;
+    letter-spacing: 4px;
+    line-height: 1;
+    padding: 10px;
+    background: rgba(255, 255, 255, .2);
+    flex: 0 0 50px;
+}
+
+p.game__board__block__title {
+    width: 150px;
+    flex: 0 0 150px;
+}
