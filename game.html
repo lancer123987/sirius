@@ -18,14 +18,15 @@
 </head>
 
 <body>
-    <header id="header">
+    <header>
         <div id="logo" class="logo">
             <logo></logo>
         </div>
+        <input id="mainMebuCheck" class="mainMebuCheck" type="checkbox">
         <ul id="mainMenu" class="c-mainMenu">
             <menu-item v-for=" item in menu" v-bind:item="item"></menu-item>
         </ul>
-        <div></div>
+        <label class="navBt" for="mainMebuCheck"><span></span><span></span><span></span></label>
     </header>
     <main>
         <div class="game">
