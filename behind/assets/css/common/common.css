@@ -339,6 +339,7 @@ header {
         padding: 100px 0 0 0;
         opacity: 0;
         background: rgba(31, 40, 71, .95);
+        pointer-events: none;
         transition: opacity .4s ease-in-out;
     }
     .c-mainMenu li {
@@ -348,6 +349,7 @@ header {
     }
     .mainMebuCheck:checked~.c-mainMenu {
         opacity: 1;
+        pointer-events: all;
     }
     .navBt {
         display: flex;
