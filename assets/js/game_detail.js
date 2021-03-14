@@ -5,19 +5,12 @@ $(document).ready(function() {
 
     let gameId = location.href.split('game_detail.html?game')[1];
 
-    //比賽日期
-    //$('.game__date').text(gameId);
-
     let ref = db.collection('game').doc(gameId);
-    let boxEnemy = [];
-    let boxPlace = [];
-    let boxScore = [];
-    let boxHome = [];
     ref.get().then(doc => {
-        boxEnemy.push(doc.data().對手);
-        boxPlace.push(doc.data().場地);
-        boxScore.push(doc.data().比數);
-        boxHome.push(doc.data().主客場);
+        let boxEnemy = doc.data().對手;
+        let boxPlace = doc.data().場地;
+        let boxScore = doc.data().比數;
+        let boxHome = doc.data().主客場;
 
         gameId = gameId.replaceAll('-', '/');
         gameId = gameId.slice(0, gameId.length - 2);
@@ -26,13 +19,19 @@ $(document).ready(function() {
         $('.game__date').text(gameId);
 
         //主客場名稱
-        if (boxHome = true) {
+        if (boxHome == false) {
             $('#awayName').text('Siriuss');
-            $('#homeName').text(doc.data().對手);
+            $('#homeName').text(boxEnemy);
         } else {
             $('#homeName').text('Siriuss');
-            $('#awayName').text(doc.data().對手);
+            $('#awayName').text(boxEnemy);
         }
+
+        //總比數
+        boxScore = boxScore.split(':');
+        $('.game__board__block__awayScroe').text(boxScore[0]);
+        $('.game__board__block__homeScroe').text(boxScore[1]);
+
     });
 
     let t01 = db.collection('game').doc(gameId).collection('t01');
@@ -245,9 +244,4 @@ $(document).ready(function() {
         });
         $('.c-loading').fadeOut();
     });
-
-    // let awayScroe = [$('.game__board__block__t01').innerText];
-    // let homeScroe = [$('.game__board__block__b01').innerText];
-    // $('.game__board__block__awayScroe').text(awayScroe);
-    // $('.game__board__block__homeScroe').text(homeScroe);
 });
