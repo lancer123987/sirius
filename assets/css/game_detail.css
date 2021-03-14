@@ -6,6 +6,11 @@
     text-align: center;
 }
 
+.game__date {
+    font-size: 24px;
+    margin: 0 auto 20px auto;
+}
+
 .game__title {
     text-align: center;
     font-size: 28px;
@@ -105,10 +110,10 @@ p.game__board__block__title {
     align-content: stretch;
     justify-items: center;
     justify-content: center;
-    border-bottom: 1px solid;
+    border-top: 1px solid;
 }
 
-.game__content__inner__item:last-child {
+.game__content__inner__item:first-child {
     border: none;
 }
 
@@ -125,15 +130,16 @@ p.game__board__block__title {
 .game__content__inner__item__hit,
 .game__content__inner__item__pitcher,
 .game__content__inner__item__direction,
-.game__content__inner__item__result {
+.game__content__inner__item__result,
+.game__content__inner__item__score {
     width: 50px;
     flex: 0 0 50px;
 }
 
 .game__content__inner__item__process,
 .game__content__inner__item__remark {
-    width: calc(50% - 100px);
-    flex: 0 0 calc(50% - 100px);
+    width: calc(50% - 125px);
+    flex: 0 0 calc(50% - 125px);
 }
 
 .game__content__inner__item__process {
