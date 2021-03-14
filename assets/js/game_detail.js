@@ -305,4 +305,9 @@ $(document).ready(function() {
         });
         $('.c-loading').fadeOut();
     });
+
+    // let awayScroe = [$('.game__board__block__t01').innerText];
+    // let homeScroe = [$('.game__board__block__b01').innerText];
+    // $('.game__board__block__awayScroe').text(awayScroe);
+    // $('.game__board__block__homeScroe').text(homeScroe);
 });
