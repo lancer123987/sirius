@@ -37,6 +37,7 @@ $(document).ready(function() {
 
     let t01 = db.collection('game').doc(gameId).collection('t01');
     t01.get().then(querySnapshot => {
+        let scoreTatal = [];
         querySnapshot.forEach(doc => {
             let hitter = [];
             let pitcher = [];
@@ -52,6 +53,10 @@ $(document).ready(function() {
             result = doc.data().擊出結果;
             remark = doc.data().備註;
             score = doc.data().分數;
+
+            scoreTatal.push(doc.data().分數);
+            $('#t01 .game__content__title__score').text(scoreTatal.reduce((a, b) => a + b));
+            $('.game__board__block__t01').text(scoreTatal.reduce((a, b) => a + b));
 
             $('#t01').append('<div class=\"game__content__inner__item\"><p class=\"game__content__inner__item__hit\">' + hitter + '</p><p class=\"game__content__inner__item__pitcher\">' + pitcher + '</p><p class=\"game__content__inner__item__process\">' + process + '</p><p class=\"game__content__inner__item__direction\">' + direction + '</p><p class=\"game__content__inner__item__result\">' + result + '</p><p class=\"game__content__inner__item__remark\">' + remark + '</p><p class=\"game__content__inner__item__score\">' + score + '</p></div></div></div>');
 
@@ -59,6 +64,7 @@ $(document).ready(function() {
     });
     let b01 = db.collection('game').doc(gameId).collection('b01');
     b01.get().then(querySnapshot => {
+        let scoreTatal = [];
         querySnapshot.forEach(doc => {
             let hitter = [];
             let pitcher = [];
@@ -75,11 +81,16 @@ $(document).ready(function() {
             remark = doc.data().備註;
             score = doc.data().分數;
 
+            scoreTatal.push(doc.data().分數);
+            $('#b01 .game__content__title__score').text(scoreTatal.reduce((a, b) => a + b));
+            $('.game__board__block__b01').text(scoreTatal.reduce((a, b) => a + b));
+
             $('#b01').append('<div class=\"game__content__inner__item\"><p class=\"game__content__inner__item__hit\">' + hitter + '</p><p class=\"game__content__inner__item__pitcher\">' + pitcher + '</p><p class=\"game__content__inner__item__process\">' + process + '</p><p class=\"game__content__inner__item__direction\">' + direction + '</p><p class=\"game__content__inner__item__result\">' + result + '</p><p class=\"game__content__inner__item__remark\">' + remark + '</p><p class=\"game__content__inner__item__score\">' + score + '</p></div></div></div>');
         });
     });
     let t02 = db.collection('game').doc(gameId).collection('t02');
     t02.get().then(querySnapshot => {
+        let scoreTatal = [];
         querySnapshot.forEach(doc => {
             let hitter = [];
             let pitcher = [];
@@ -95,6 +106,10 @@ $(document).ready(function() {
             result = doc.data().擊出結果;
             remark = doc.data().備註;
             score = doc.data().分數;
+
+            scoreTatal.push(doc.data().分數);
+            $('#t02 .game__content__title__score').text(scoreTatal.reduce((a, b) => a + b));
+            $('.game__board__block__t02').text(scoreTatal.reduce((a, b) => a + b));
 
             $('#t02').append('<div class=\"game__content__inner__item\"><p class=\"game__content__inner__item__hit\">' + hitter + '</p><p class=\"game__content__inner__item__pitcher\">' + pitcher + '</p><p class=\"game__content__inner__item__process\">' + process + '</p><p class=\"game__content__inner__item__direction\">' + direction + '</p><p class=\"game__content__inner__item__result\">' + result + '</p><p class=\"game__content__inner__item__remark\">' + remark + '</p><p class=\"game__content__inner__item__score\">' + score + '</p></div></div></div>');
 
@@ -102,6 +117,7 @@ $(document).ready(function() {
     });
     let b02 = db.collection('game').doc(gameId).collection('b02');
     b02.get().then(querySnapshot => {
+        let scoreTatal = [];
         querySnapshot.forEach(doc => {
             let hitter = [];
             let pitcher = [];
@@ -117,12 +133,18 @@ $(document).ready(function() {
             result = doc.data().擊出結果;
             remark = doc.data().備註;
             score = doc.data().分數;
+
+            scoreTatal.push(doc.data().分數);
+            $('#b02 .game__content__title__score').text(scoreTatal.reduce((a, b) => a + b));
+            $('.game__board__block__b02').text(scoreTatal.reduce((a, b) => a + b));
+
             $('#b02').append('<div class=\"game__content__inner__item\"><p class=\"game__content__inner__item__hit\">' + hitter + '</p><p class=\"game__content__inner__item__pitcher\">' + pitcher + '</p><p class=\"game__content__inner__item__process\">' + process + '</p><p class=\"game__content__inner__item__direction\">' + direction + '</p><p class=\"game__content__inner__item__result\">' + result + '</p><p class=\"game__content__inner__item__remark\">' + remark + '</p><p class=\"game__content__inner__item__score\">' + score + '</p></div></div></div>');
 
         });
     });
     let t03 = db.collection('game').doc(gameId).collection('t03');
     t03.get().then(querySnapshot => {
+        let scoreTatal = [];
         querySnapshot.forEach(doc => {
             let hitter = [];
             let pitcher = [];
@@ -138,6 +160,10 @@ $(document).ready(function() {
             result = doc.data().擊出結果;
             remark = doc.data().備註;
             score = doc.data().分數;
+
+            scoreTatal.push(doc.data().分數);
+            $('#t03 .game__content__title__score').text(scoreTatal.reduce((a, b) => a + b));
+            $('.game__board__block__t03').text(scoreTatal.reduce((a, b) => a + b));
 
             $('#t03').append('<div class=\"game__content__inner__item\"><p class=\"game__content__inner__item__hit\">' + hitter + '</p><p class=\"game__content__inner__item__pitcher\">' + pitcher + '</p><p class=\"game__content__inner__item__process\">' + process + '</p><p class=\"game__content__inner__item__direction\">' + direction + '</p><p class=\"game__content__inner__item__result\">' + result + '</p><p class=\"game__content__inner__item__remark\">' + remark + '</p><p class=\"game__content__inner__item__score\">' + score + '</p></div></div></div>');
 
@@ -145,14 +171,15 @@ $(document).ready(function() {
     });
     let b03 = db.collection('game').doc(gameId).collection('b03');
     b03.get().then(querySnapshot => {
-        let hitter = [];
-        let pitcher = [];
-        let process = [];
-        let direction = [];
-        let result = [];
-        let remark = [];
-        let score = [];
+        let scoreTatal = [];
         querySnapshot.forEach(doc => {
+            let hitter = [];
+            let pitcher = [];
+            let process = [];
+            let direction = [];
+            let result = [];
+            let remark = [];
+            let score = [];
             hitter = doc.data().打者;
             pitcher = doc.data().投手;
             process = doc.data().過程;
@@ -160,6 +187,10 @@ $(document).ready(function() {
             result = doc.data().擊出結果;
             remark = doc.data().備註;
             score = doc.data().分數;
+
+            scoreTatal.push(doc.data().分數);
+            $('#b03 .game__content__title__score').text(scoreTatal.reduce((a, b) => a + b));
+            $('.game__board__block__b03').text(scoreTatal.reduce((a, b) => a + b));
 
             $('#b03').append('<div class=\"game__content__inner__item\"><p class=\"game__content__inner__item__hit\">' + hitter + '</p><p class=\"game__content__inner__item__pitcher\">' + pitcher + '</p><p class=\"game__content__inner__item__process\">' + process + '</p><p class=\"game__content__inner__item__direction\">' + direction + '</p><p class=\"game__content__inner__item__result\">' + result + '</p><p class=\"game__content__inner__item__remark\">' + remark + '</p><p class=\"game__content__inner__item__score\">' + score + '</p></div></div></div>');
 
@@ -167,6 +198,7 @@ $(document).ready(function() {
     });
     let t04 = db.collection('game').doc(gameId).collection('t04');
     t04.get().then(querySnapshot => {
+        let scoreTatal = [];
         querySnapshot.forEach(doc => {
             let hitter = [];
             let pitcher = [];
@@ -182,6 +214,10 @@ $(document).ready(function() {
             result = doc.data().擊出結果;
             remark = doc.data().備註;
             score = doc.data().分數;
+
+            scoreTatal.push(doc.data().分數);
+            $('#t04 .game__content__title__score').text(scoreTatal.reduce((a, b) => a + b));
+            $('.game__board__block__t04').text(scoreTatal.reduce((a, b) => a + b));
 
             $('#t04').append('<div class=\"game__content__inner__item\"><p class=\"game__content__inner__item__hit\">' + hitter + '</p><p class=\"game__content__inner__item__pitcher\">' + pitcher + '</p><p class=\"game__content__inner__item__process\">' + process + '</p><p class=\"game__content__inner__item__direction\">' + direction + '</p><p class=\"game__content__inner__item__result\">' + result + '</p><p class=\"game__content__inner__item__remark\">' + remark + '</p><p class=\"game__content__inner__item__score\">' + score + '</p></div></div></div>');
 
@@ -189,28 +225,7 @@ $(document).ready(function() {
     });
     let b04 = db.collection('game').doc(gameId).collection('b04');
     b04.get().then(querySnapshot => {
-        let hitter = [];
-        let pitcher = [];
-        let process = [];
-        let direction = [];
-        let result = [];
-        let remark = [];
-        let score = [];
-        querySnapshot.forEach(doc => {
-            hitter = doc.data().打者;
-            pitcher = doc.data().投手;
-            process = doc.data().過程;
-            direction = doc.data().方向;
-            result = doc.data().擊出結果;
-            remark = doc.data().備註;
-            score = doc.data().分數;
-
-            $('#b04').append('<div class=\"game__content__inner__item\"><p class=\"game__content__inner__item__hit\">' + hitter + '</p><p class=\"game__content__inner__item__pitcher\">' + pitcher + '</p><p class=\"game__content__inner__item__process\">' + process + '</p><p class=\"game__content__inner__item__direction\">' + direction + '</p><p class=\"game__content__inner__item__result\">' + result + '</p><p class=\"game__content__inner__item__remark\">' + remark + '</p><p class=\"game__content__inner__item__score\">' + score + '</p></div></div></div>');
-
-        });
-    });
-    let t05 = db.collection('game').doc(gameId).collection('t05');
-    t05.get().then(querySnapshot => {
+        let scoreTatal = [];
         querySnapshot.forEach(doc => {
             let hitter = [];
             let pitcher = [];
@@ -227,20 +242,25 @@ $(document).ready(function() {
             remark = doc.data().備註;
             score = doc.data().分數;
 
-            $('#t05').append('<div class=\"game__content__inner__item\"><p class=\"game__content__inner__item__hit\">' + hitter + '</p><p class=\"game__content__inner__item__pitcher\">' + pitcher + '</p><p class=\"game__content__inner__item__process\">' + process + '</p><p class=\"game__content__inner__item__direction\">' + direction + '</p><p class=\"game__content__inner__item__result\">' + result + '</p><p class=\"game__content__inner__item__remark\">' + remark + '</p><p class=\"game__content__inner__item__score\">' + score + '</p></div></div></div>');
+            scoreTatal.push(doc.data().分數);
+            $('#b04 .game__content__title__score').text(scoreTatal.reduce((a, b) => a + b));
+            $('.game__board__block__b04').text(scoreTatal.reduce((a, b) => a + b));
+
+            $('#b04').append('<div class=\"game__content__inner__item\"><p class=\"game__content__inner__item__hit\">' + hitter + '</p><p class=\"game__content__inner__item__pitcher\">' + pitcher + '</p><p class=\"game__content__inner__item__process\">' + process + '</p><p class=\"game__content__inner__item__direction\">' + direction + '</p><p class=\"game__content__inner__item__result\">' + result + '</p><p class=\"game__content__inner__item__remark\">' + remark + '</p><p class=\"game__content__inner__item__score\">' + score + '</p></div></div></div>');
 
         });
     });
-    let b05 = db.collection('game').doc(gameId).collection('b05');
-    b05.get().then(querySnapshot => {
-        let hitter = [];
-        let pitcher = [];
-        let process = [];
-        let direction = [];
-        let result = [];
-        let remark = [];
-        let score = [];
+    let t05 = db.collection('game').doc(gameId).collection('t05');
+    t05.get().then(querySnapshot => {
+        let scoreTatal = [];
         querySnapshot.forEach(doc => {
+            let hitter = [];
+            let pitcher = [];
+            let process = [];
+            let direction = [];
+            let result = [];
+            let remark = [];
+            let score = [];
             hitter = doc.data().打者;
             pitcher = doc.data().投手;
             process = doc.data().過程;
@@ -248,6 +268,37 @@ $(document).ready(function() {
             result = doc.data().擊出結果;
             remark = doc.data().備註;
             score = doc.data().分數;
+
+            scoreTatal.push(doc.data().分數);
+            $('#t05 .game__content__title__score').text(scoreTatal.reduce((a, b) => a + b));
+            $('.game__board__block__t05').text(scoreTatal.reduce((a, b) => a + b));
+
+            $('#t05').append('<div class=\"game__content__inner__item\"><p class=\"game__content__inner__item__hit\">' + hitter + '</p><p class=\"game__content__inner__item__pitcher\">' + pitcher + '</p><p class=\"game__content__inner__item__process\">' + process + '</p><p class=\"game__content__inner__item__direction\">' + direction + '</p><p class=\"game__content__inner__item__result\">' + result + '</p><p class=\"game__content__inner__item__remark\">' + remark + '</p><p class=\"game__content__inner__item__score\">' + score + '</p></div></div></div>');
+
+        });
+    });
+    let b05 = db.collection('game').doc(gameId).collection('b05');
+    b05.get().then(querySnapshot => {
+        let scoreTatal = [];
+        querySnapshot.forEach(doc => {
+            let hitter = [];
+            let pitcher = [];
+            let process = [];
+            let direction = [];
+            let result = [];
+            let remark = [];
+            let score = [];
+            hitter = doc.data().打者;
+            pitcher = doc.data().投手;
+            process = doc.data().過程;
+            direction = doc.data().方向;
+            result = doc.data().擊出結果;
+            remark = doc.data().備註;
+            score = doc.data().分數;
+
+            scoreTatal.push(doc.data().分數);
+            $('#b05 .game__content__title__score').text(scoreTatal.reduce((a, b) => a + b));
+            $('.game__board__block__b05').text(scoreTatal.reduce((a, b) => a + b));
 
             $('#b05').append('<div class=\"game__content__inner__item\"><p class=\"game__content__inner__item__hit\">' + hitter + '</p><p class=\"game__content__inner__item__pitcher\">' + pitcher + '</p><p class=\"game__content__inner__item__process\">' + process + '</p><p class=\"game__content__inner__item__direction\">' + direction + '</p><p class=\"game__content__inner__item__result\">' + result + '</p><p class=\"game__content__inner__item__remark\">' + remark + '</p><p class=\"game__content__inner__item__score\">' + score + '</p></div></div></div>');
 
