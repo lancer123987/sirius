@@ -1,5 +1,11 @@
 @charset "UTF-8";
 .game {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    justify-items: flex-start;
+    justify-content: flex-start;
     width: calc(100% - 60px);
     margin: 0 auto;
     padding: 100px 0 0 0;
@@ -8,5 +14,59 @@
 
 .game__item {
     display: block;
+    width: calc(25% - (30px / 4));
+    margin: 0 10px 10px 0;
+    padding: 20px 10px;
     background: rgba(255, 255, 255, .2);
+    letter-spacing: 2px;
+    transition: background-color .4s ease-in-out;
+}
+
+.game__item:nth-of-type(4n) {
+    margin: 0 0 10px 0;
+}
+
+.game__item:hover {
+    background: rgba(255, 255, 255, .4);
+}
+
+.game__item__team__away {
+    margin: 0 10px 0 0;
+}
+
+.game__item__team__home {
+    margin: 0 0 0 10px;
+}
+
+@media only screen and (max-width: 991px) {
+    .game__item,
+    .game__item:nth-of-type(4n) {
+        width: calc(33.33% - (20px / 3));
+        margin: 0 10px 10px 0;
+    }
+    .game__item:nth-of-type(3n) {
+        margin: 0 0 10px 0;
+    }
+}
+
+@media only screen and (max-width: 767px) {
+    .game__item,
+    .game__item:nth-of-type(3n),
+    .game__item:nth-of-type(4n) {
+        width: calc(50% - 5px);
+        margin: 0 10px 10px 0;
+    }
+    .game__item:nth-of-type(2n) {
+        margin: 0 0 10px 0;
+    }
+}
+
+@media only screen and (max-width: 575px) {
+    .game__item,
+    .game__item:nth-of-type(2n),
+    .game__item:nth-of-type(3n),
+    .game__item:nth-of-type(4n) {
+        width: 100%;
+        margin: 0 0 10px 0;
+    }
 }
