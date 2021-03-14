@@ -26,7 +26,7 @@ $(document).ready(function() {
         $('.game__date').text(gameId);
 
         //主客場名稱
-        if (boxHome == false) {
+        if (boxHome = true) {
             $('#awayName').text('Siriuss');
             $('#homeName').text(doc.data().對手);
         } else {
@@ -39,20 +39,14 @@ $(document).ready(function() {
     t01.get().then(querySnapshot => {
         let scoreTatal = [];
         querySnapshot.forEach(doc => {
-            let hitter = [];
-            let pitcher = [];
-            let process = [];
-            let direction = [];
-            let result = [];
-            let remark = [];
-            let score = [];
-            hitter = doc.data().打者;
-            pitcher = doc.data().投手;
-            process = doc.data().過程;
-            direction = doc.data().方向;
-            result = doc.data().擊出結果;
-            remark = doc.data().備註;
-            score = doc.data().分數;
+
+            let hitter = doc.data().打者;
+            let pitcher = doc.data().投手;
+            let process = doc.data().過程;
+            let direction = doc.data().方向;
+            let result = doc.data().擊出結果;
+            let remark = doc.data().備註;
+            let score = doc.data().分數;
 
             scoreTatal.push(doc.data().分數);
             $('#t01 .game__content__title__score').text(scoreTatal.reduce((a, b) => a + b));
@@ -66,20 +60,14 @@ $(document).ready(function() {
     b01.get().then(querySnapshot => {
         let scoreTatal = [];
         querySnapshot.forEach(doc => {
-            let hitter = [];
-            let pitcher = [];
-            let process = [];
-            let direction = [];
-            let result = [];
-            let remark = [];
-            let score = [];
-            hitter = doc.data().打者;
-            pitcher = doc.data().投手;
-            process = doc.data().過程;
-            direction = doc.data().方向;
-            result = doc.data().擊出結果;
-            remark = doc.data().備註;
-            score = doc.data().分數;
+
+            let hitter = doc.data().打者;
+            let pitcher = doc.data().投手;
+            let process = doc.data().過程;
+            let direction = doc.data().方向;
+            let result = doc.data().擊出結果;
+            let remark = doc.data().備註;
+            let score = doc.data().分數;
 
             scoreTatal.push(doc.data().分數);
             $('#b01 .game__content__title__score').text(scoreTatal.reduce((a, b) => a + b));
@@ -92,20 +80,14 @@ $(document).ready(function() {
     t02.get().then(querySnapshot => {
         let scoreTatal = [];
         querySnapshot.forEach(doc => {
-            let hitter = [];
-            let pitcher = [];
-            let process = [];
-            let direction = [];
-            let result = [];
-            let remark = [];
-            let score = [];
-            hitter = doc.data().打者;
-            pitcher = doc.data().投手;
-            process = doc.data().過程;
-            direction = doc.data().方向;
-            result = doc.data().擊出結果;
-            remark = doc.data().備註;
-            score = doc.data().分數;
+
+            let hitter = doc.data().打者;
+            let pitcher = doc.data().投手;
+            let process = doc.data().過程;
+            let direction = doc.data().方向;
+            let result = doc.data().擊出結果;
+            let remark = doc.data().備註;
+            let score = doc.data().分數;
 
             scoreTatal.push(doc.data().分數);
             $('#t02 .game__content__title__score').text(scoreTatal.reduce((a, b) => a + b));
@@ -119,20 +101,14 @@ $(document).ready(function() {
     b02.get().then(querySnapshot => {
         let scoreTatal = [];
         querySnapshot.forEach(doc => {
-            let hitter = [];
-            let pitcher = [];
-            let process = [];
-            let direction = [];
-            let result = [];
-            let remark = [];
-            let score = [];
-            hitter = doc.data().打者;
-            pitcher = doc.data().投手;
-            process = doc.data().過程;
-            direction = doc.data().方向;
-            result = doc.data().擊出結果;
-            remark = doc.data().備註;
-            score = doc.data().分數;
+
+            let hitter = doc.data().打者;
+            let pitcher = doc.data().投手;
+            let process = doc.data().過程;
+            let direction = doc.data().方向;
+            let result = doc.data().擊出結果;
+            let remark = doc.data().備註;
+            let score = doc.data().分數;
 
             scoreTatal.push(doc.data().分數);
             $('#b02 .game__content__title__score').text(scoreTatal.reduce((a, b) => a + b));
@@ -146,20 +122,14 @@ $(document).ready(function() {
     t03.get().then(querySnapshot => {
         let scoreTatal = [];
         querySnapshot.forEach(doc => {
-            let hitter = [];
-            let pitcher = [];
-            let process = [];
-            let direction = [];
-            let result = [];
-            let remark = [];
-            let score = [];
-            hitter = doc.data().打者;
-            pitcher = doc.data().投手;
-            process = doc.data().過程;
-            direction = doc.data().方向;
-            result = doc.data().擊出結果;
-            remark = doc.data().備註;
-            score = doc.data().分數;
+
+            let hitter = doc.data().打者;
+            let pitcher = doc.data().投手;
+            let process = doc.data().過程;
+            let direction = doc.data().方向;
+            let result = doc.data().擊出結果;
+            let remark = doc.data().備註;
+            let score = doc.data().分數;
 
             scoreTatal.push(doc.data().分數);
             $('#t03 .game__content__title__score').text(scoreTatal.reduce((a, b) => a + b));
@@ -173,20 +143,14 @@ $(document).ready(function() {
     b03.get().then(querySnapshot => {
         let scoreTatal = [];
         querySnapshot.forEach(doc => {
-            let hitter = [];
-            let pitcher = [];
-            let process = [];
-            let direction = [];
-            let result = [];
-            let remark = [];
-            let score = [];
-            hitter = doc.data().打者;
-            pitcher = doc.data().投手;
-            process = doc.data().過程;
-            direction = doc.data().方向;
-            result = doc.data().擊出結果;
-            remark = doc.data().備註;
-            score = doc.data().分數;
+
+            let hitter = doc.data().打者;
+            let pitcher = doc.data().投手;
+            let process = doc.data().過程;
+            let direction = doc.data().方向;
+            let result = doc.data().擊出結果;
+            let remark = doc.data().備註;
+            let score = doc.data().分數;
 
             scoreTatal.push(doc.data().分數);
             $('#b03 .game__content__title__score').text(scoreTatal.reduce((a, b) => a + b));
@@ -200,20 +164,14 @@ $(document).ready(function() {
     t04.get().then(querySnapshot => {
         let scoreTatal = [];
         querySnapshot.forEach(doc => {
-            let hitter = [];
-            let pitcher = [];
-            let process = [];
-            let direction = [];
-            let result = [];
-            let remark = [];
-            let score = [];
-            hitter = doc.data().打者;
-            pitcher = doc.data().投手;
-            process = doc.data().過程;
-            direction = doc.data().方向;
-            result = doc.data().擊出結果;
-            remark = doc.data().備註;
-            score = doc.data().分數;
+
+            let hitter = doc.data().打者;
+            let pitcher = doc.data().投手;
+            let process = doc.data().過程;
+            let direction = doc.data().方向;
+            let result = doc.data().擊出結果;
+            let remark = doc.data().備註;
+            let score = doc.data().分數;
 
             scoreTatal.push(doc.data().分數);
             $('#t04 .game__content__title__score').text(scoreTatal.reduce((a, b) => a + b));
@@ -227,20 +185,14 @@ $(document).ready(function() {
     b04.get().then(querySnapshot => {
         let scoreTatal = [];
         querySnapshot.forEach(doc => {
-            let hitter = [];
-            let pitcher = [];
-            let process = [];
-            let direction = [];
-            let result = [];
-            let remark = [];
-            let score = [];
-            hitter = doc.data().打者;
-            pitcher = doc.data().投手;
-            process = doc.data().過程;
-            direction = doc.data().方向;
-            result = doc.data().擊出結果;
-            remark = doc.data().備註;
-            score = doc.data().分數;
+
+            let hitter = doc.data().打者;
+            let pitcher = doc.data().投手;
+            let process = doc.data().過程;
+            let direction = doc.data().方向;
+            let result = doc.data().擊出結果;
+            let remark = doc.data().備註;
+            let score = doc.data().分數;
 
             scoreTatal.push(doc.data().分數);
             $('#b04 .game__content__title__score').text(scoreTatal.reduce((a, b) => a + b));
@@ -254,20 +206,14 @@ $(document).ready(function() {
     t05.get().then(querySnapshot => {
         let scoreTatal = [];
         querySnapshot.forEach(doc => {
-            let hitter = [];
-            let pitcher = [];
-            let process = [];
-            let direction = [];
-            let result = [];
-            let remark = [];
-            let score = [];
-            hitter = doc.data().打者;
-            pitcher = doc.data().投手;
-            process = doc.data().過程;
-            direction = doc.data().方向;
-            result = doc.data().擊出結果;
-            remark = doc.data().備註;
-            score = doc.data().分數;
+
+            let hitter = doc.data().打者;
+            let pitcher = doc.data().投手;
+            let process = doc.data().過程;
+            let direction = doc.data().方向;
+            let result = doc.data().擊出結果;
+            let remark = doc.data().備註;
+            let score = doc.data().分數;
 
             scoreTatal.push(doc.data().分數);
             $('#t05 .game__content__title__score').text(scoreTatal.reduce((a, b) => a + b));
@@ -281,20 +227,14 @@ $(document).ready(function() {
     b05.get().then(querySnapshot => {
         let scoreTatal = [];
         querySnapshot.forEach(doc => {
-            let hitter = [];
-            let pitcher = [];
-            let process = [];
-            let direction = [];
-            let result = [];
-            let remark = [];
-            let score = [];
-            hitter = doc.data().打者;
-            pitcher = doc.data().投手;
-            process = doc.data().過程;
-            direction = doc.data().方向;
-            result = doc.data().擊出結果;
-            remark = doc.data().備註;
-            score = doc.data().分數;
+
+            let hitter = doc.data().打者;
+            let pitcher = doc.data().投手;
+            let process = doc.data().過程;
+            let direction = doc.data().方向;
+            let result = doc.data().擊出結果;
+            let remark = doc.data().備註;
+            let score = doc.data().分數;
 
             scoreTatal.push(doc.data().分數);
             $('#b05 .game__content__title__score').text(scoreTatal.reduce((a, b) => a + b));
