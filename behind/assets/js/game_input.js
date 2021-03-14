@@ -99,6 +99,7 @@ $(document).ready(function() {
         let direction = $('.direction').val(); //方向
         let hit_type = $('.hit_type').val(); //擊出結果
         let remark = $('.remark').val(); //備註
+        let score = $('.score').val();
         db.collection("game").doc(docName).collection(roundName).doc('hitter' + hitterId).set({
             投手: pitcher,
             左右打: hobit_h,
@@ -107,9 +108,10 @@ $(document).ready(function() {
             結果: result,
             方向: direction,
             擊出結果: hit_type,
-            備註: remark
+            備註: remark,
+            分數: score
         });
-        $('.hit, .process, .remark').val('');
+        $('.hit, .process, .remark, .score').val('');
     });
 
     //過程輸入
