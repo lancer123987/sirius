@@ -68,6 +68,15 @@ p.game__board__block__title {
     flex: 0 0 150px;
 }
 
+.game__description {
+    width: 100%;
+}
+
+.game__description span {
+    display: inline-block;
+    margin: 0 10px;
+}
+
 
 /****比賽內容****/
 
