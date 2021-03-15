@@ -21,10 +21,10 @@ $(document).ready(function() {
 
         //主客場名稱
         if (boxHome == false) {
-            $('#awayName').text('Siriuss');
+            $('#awayName').text('Sirius');
             $('#homeName').text(boxEnemy);
         } else {
-            $('#homeName').text('Siriuss');
+            $('#homeName').text('Sirius');
             $('#awayName').text(boxEnemy);
         }
 
