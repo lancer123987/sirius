@@ -11,6 +11,7 @@ $(document).ready(function() {
         let boxPlace = doc.data().場地;
         let boxScore = doc.data().比數;
         let boxHome = doc.data().主客場;
+        boxInner = doc.data().比賽局數;
 
         gameId = gameId.replaceAll('-', '/');
         gameId = gameId.slice(0, gameId.length - 2);
