@@ -1,5 +1,5 @@
 $(document).ready(function() {
-    var ref = db.collection('game');
+    let ref = db.collection('game');
     let boxGame = [];
     let boxEnemy = [];
     let boxPlace = [];
