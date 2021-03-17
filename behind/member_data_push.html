@@ -38,8 +38,8 @@
                 <option value="" disabled selected hidden>球員</option>
             </select>
             <h3 class="form__subtitle">打擊</h3>
-            <input type="text" name="pa" placeholder="打席">
-            <input type="text" name="ab" placeholder="打數">
+            <input type="text" name="h_pa" placeholder="打席">
+            <input type="text" name="h_ab" placeholder="打數">
             <input type="text" name="h_fly" placeholder="飛球">
             <input type="text" name="h_roll" placeholder="滾地">
             <input type="text" name="h_1h" placeholder="一安">
@@ -55,12 +55,12 @@
             <input type="text" name="h_dp" placeholder="雙殺">
             <input type="text" name="h_tp" placeholder="三殺">
             <input type="text" name="h_sf" placeholder="高飛犧牲">
-            <input type="text" name="s_sh" placeholder="犧牲短打">
+            <input type="text" name="h_sh" placeholder="犧牲短打">
             <input type="text" name="h_error" placeholder="失誤上壘">
             <input type="text" name="h_sb" placeholder="盜壘">
             <input type="text" name="h_cs" placeholder="盜壘失敗">
             <h3 class="form__subtitle">守備</h3>
-            <select>
+            <select name="d_position">
                 <option value="" disabled selected hidden>位置</option>
                 <option value="p">投手</option>
                 <option value="c">捕手</option>
@@ -72,50 +72,53 @@
                 <option value="cf">中外野</option>
                 <option value="rf">右外野</option>
             </select>
-            <input type="text" name="" placeholder="守備機會">
-            <input type="text" name="" placeholder="刺殺">
-            <input type="text" name="" placeholder="助殺">
-            <input type="text" name="" placeholder="雙殺">
-            <input type="text" name="" placeholder="三殺">
-            <input type="text" name="" placeholder="阻殺">
-            <input type="text" name="" placeholder="失誤">
-            <input type="text" name="" placeholder="捕逸">
+            <input type="text" name="d_tc" placeholder="守備機會">
+            <input type="text" name="d_po" placeholder="刺殺">
+            <input type="text" name="d_a" placeholder="助殺">
+            <input type="text" name="d_dp" placeholder="雙殺">
+            <input type="text" name="d_tp" placeholder="三殺">
+            <input type="text" name="d_cs" placeholder="阻殺">
+            <input type="text" name="d_error_catch" placeholder="接球失誤">
+            <input type="text" name="d_error_pass" placeholder="傳球失誤">
+            <input type="text" name="d_error_roll" placeholder="滾地失誤">
+            <input type="text" name="d_error_fly" placeholder="高飛失誤">
+            <input type="text" name="d_pb" placeholder="捕逸">
             <h3 class="form__subtitle">投球</h3>
             <select>
-                <option value="">先發</option>
-                <option value="">後援</option>
+                <option value="p_sp">先發</option>
+                <option value="p_rp">後援</option>
             </select>
             <select>
                 <option value="" disabled selected hidden>勝敗</option>
-                <option value="win">勝投</option>
-                <option value="lose">敗投</option>
-                <option value="hld">中繼點</option>
-                <option value="">救援成功</option>
-                <option value="">救援失敗</option>
-                <option value="">無關勝敗</option>
+                <option value="p_win">勝投</option>
+                <option value="p_lose">敗投</option>
+                <option value="p_hld">中繼點</option>
+                <option value="p_sv">救援成功</option>
+                <option value="p_svf">救援失敗</option>
+                <option value="p_non">無關勝敗</option>
             </select>
-            <input type="text" name="" placeholder="局數">
-            <input type="text" name="" placeholder="好球數">
-            <input type="text" name="" placeholder="壞球數">
-            <input type="text" name="" placeholder="暴投">
-            <input type="text" name="" placeholder="投手犯規">
+            <input type="text" name="p_ip" placeholder="局數">
+            <input type="text" name="p_s" placeholder="好球數">
+            <input type="text" name="p_b" placeholder="壞球數">
+            <input type="text" name="p_w" placeholder="暴投">
+            <input type="text" name="p_bk" placeholder="投手犯規">
             <input type="text" name="p_fly" placeholder="飛球">
             <input type="text" name="p_roll" placeholder="滾地">
-            <input type="text" name="" placeholder="一安">
-            <input type="text" name="" placeholder="二安">
-            <input type="text" name="" placeholder="三安">
-            <input type="text" name="" placeholder="全壘打">
-            <input type="text" name="" placeholder="三振">
-            <input type="text" name="" placeholder="四壞">
-            <input type="text" name="" placeholder="觸身">
+            <input type="text" name="p_1h" placeholder="一安">
+            <input type="text" name="p_2h" placeholder="二安">
+            <input type="text" name="p_3h" placeholder="三安">
+            <input type="text" name="p_hr" placeholder="全壘打">
+            <input type="text" name="p_k" placeholder="三振">
+            <input type="text" name="p_bb" placeholder="四壞">
+            <input type="text" name="p_db" placeholder="觸身">
             <input type="text" name="p_dp" placeholder="雙殺">
             <input type="text" name="p_tp" placeholder="三殺">
-            <input type="text" name="" placeholder="牽制數">
-            <input type="text" name="" placeholder="牽制成功">
-            <input type="text" name="" placeholder="失分">
-            <input type="text" name="" placeholder="責失">
-            <input type="text" name="" placeholder="完投">
-            <input type="text" name="" placeholder="完封">
+            <input type="text" name="p_po" placeholder="牽制數">
+            <input type="text" name="p_pos" placeholder="牽制成功">
+            <input type="text" name="p_r" placeholder="失分">
+            <input type="text" name="p_er" placeholder="責失">
+            <input type="text" name="p_cg" placeholder="完投">
+            <input type="text" name="p_sho" placeholder="完封">
             <button id="submit">送出</button>
         </div>
     </main>

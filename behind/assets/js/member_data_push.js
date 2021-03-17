@@ -5,7 +5,6 @@ $(document).ready(function() {
     var ref = db.collection('game');
     ref.get().then(querySnapshot => {
         querySnapshot.forEach(doc => {
-            console.log(doc.id);
             $('select[name="game_date"]').append('<option value=\"' + doc.id + '\">' + doc.id + '<\/option>');
         });
     });
