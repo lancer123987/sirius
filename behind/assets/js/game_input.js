@@ -99,7 +99,7 @@ $(document).ready(function() {
         let direction = $('.direction').val(); //方向
         let hit_type = $('.hit_type').val(); //擊出結果
         let remark = $('.remark').val(); //備註
-        let score = $('.score').val();
+        let score = parseInt($('.score').val()); //得分
         db.collection("game").doc(docName).collection(roundName).doc('hitter' + hitterId).set({
             投手: pitcher,
             左右打: hobit_h,
