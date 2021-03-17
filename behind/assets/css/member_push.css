@@ -22,6 +22,13 @@ main {
     font-size: 24px;
 }
 
+.form__subtitle {
+    font-size: 18px;
+    padding: 0 0 5px 0;
+    margin: 40px auto 20px auto;
+    border-bottom: 1px solid #fff;
+}
+
 input,
 select {
     width: 100%;
