@@ -82,14 +82,14 @@
             <input type="text" name="" placeholder="捕逸">
             <h3 class="form__subtitle">投球</h3>
             <select>
-                <option>先發</option>
-                <option>非先發</option>
+                <option value="">先發</option>
+                <option value="">後援</option>
             </select>
             <select>
                 <option value="" disabled selected hidden>勝敗</option>
-                <option value="">勝投</option>
-                <option value="">敗投</option>
-                <option value="">中繼點</option>
+                <option value="win">勝投</option>
+                <option value="lose">敗投</option>
+                <option value="hld">中繼點</option>
                 <option value="">救援成功</option>
                 <option value="">救援失敗</option>
                 <option value="">無關勝敗</option>
@@ -98,6 +98,7 @@
             <input type="text" name="" placeholder="好球數">
             <input type="text" name="" placeholder="壞球數">
             <input type="text" name="" placeholder="暴投">
+            <input type="text" name="" placeholder="投手犯規">
             <input type="text" name="p_fly" placeholder="飛球">
             <input type="text" name="p_roll" placeholder="滾地">
             <input type="text" name="" placeholder="一安">
@@ -113,6 +114,8 @@
             <input type="text" name="" placeholder="牽制成功">
             <input type="text" name="" placeholder="失分">
             <input type="text" name="" placeholder="責失">
+            <input type="text" name="" placeholder="完投">
+            <input type="text" name="" placeholder="完封">
             <button id="submit">送出</button>
         </div>
     </main>
