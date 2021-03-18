@@ -23,6 +23,13 @@ $(document).ready(function() {
         let game_date = $('select[name="game_date"]').val(),
             game_member = $('select[name="game_member"]').val();
 
+        $('input[type="text"]').each(function() {
+            let val = $(this).val();
+            if (val == '') {
+                $(this).val(parseInt(0));
+            } else {}
+        });
+
         //打擊數據
         let h_pa = parseInt($('input[name="h_pa"]').val()), //打席
             h_ab = parseInt($('input[name="h_ab"]').val()), //打數
@@ -41,7 +48,7 @@ $(document).ready(function() {
             h_sf = parseInt($('input[name="h_sf"]').val()), //高飛犧牲
             h_sh = parseInt($('input[name="h_sh"]').val()), //犧牲短打
             h_error = parseInt($('input[name="h_error"]').val()), //失誤上壘
-            h_sc = parseInt($('input[name="h_sc"]').val()), //盜壘成功
+            h_sb = parseInt($('input[name="h_sb"]').val()), //盜壘成功
             h_cs = parseInt($('input[name="h_cs"]').val()), //盜壘失敗
             h_fly = parseInt($('input[name="h_fly"]').val()), //飛球
             h_roll = parseInt($('input[name="h_roll"]').val()); //滾地
@@ -61,7 +68,7 @@ $(document).ready(function() {
             d_pb = parseInt($('input[name="d_pb"]').val()) //捕逸
 
         //投球數據
-        let p_pp = parseInt($('input[name="p_pp"]').val()), //局數*3
+        let p_ip = parseInt($('input[name="p_ip"]').val()), //局數*3
             p_s = parseInt($('input[name="p_s"]').val()), //好球數
             p_b = parseInt($('input[name="p_b"]').val()), //壞球數
             p_w = parseInt($('input[name="p_w"]').val()), //暴投
@@ -84,14 +91,6 @@ $(document).ready(function() {
             p_cg = parseInt($('select[name="p_cg"]').val()), //完投
             p_sho = parseInt($('select[name="p_sho"]').val()); //完封
 
-
-        $('input[type="text"]').each(function() {
-            let val = $(this).val();
-            if (val == '') {
-                $(this).val(parseInt(0));
-            } else {}
-        });
-
         //進攻數據
         db.collection('SiriusMember').doc(game_member).collection('record').doc(game_date + '-attack').set({
             打席: h_pa,
@@ -113,7 +112,7 @@ $(document).ready(function() {
             飛球: h_fly,
             滾地: h_roll,
             失誤上壘: h_error,
-            盜壘成功: h_sc,
+            盜壘成功: h_sb,
             盜壘失敗: h_cs
         });
         //守備數據
@@ -132,7 +131,7 @@ $(document).ready(function() {
         });
         //投球數據
         db.collection('SiriusMember').doc(game_member).collection('record').doc(game_date + '-pitch').set({
-            局數: p_pp,
+            局數: p_ip,
             好球數: p_s,
             壞球數: p_b,
             暴投: p_w,
