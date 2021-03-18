@@ -61,7 +61,7 @@ $(document).ready(function() {
             d_pb = parseInt($('input[name="d_pb"]').val()) //捕逸
 
         //投球數據
-        let p_pp = parseInt($('input[name="p_pp"]').val()), //局數
+        let p_pp = parseInt($('input[name="p_pp"]').val()), //局數*3
             p_s = parseInt($('input[name="p_s"]').val()), //好球數
             p_b = parseInt($('input[name="p_b"]').val()), //壞球數
             p_w = parseInt($('input[name="p_w"]').val()), //暴投
