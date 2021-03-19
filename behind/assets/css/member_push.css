@@ -23,10 +23,25 @@ main {
 }
 
 .form__subtitle {
+    display: flex;
+    align-items: center;
+    align-content: center;
+    justify-items: center;
+    justify-content: space-between;
     font-size: 18px;
     padding: 0 0 5px 0;
     margin: 40px auto 20px auto;
     border-bottom: 1px solid #fff;
+}
+
+.form__subtitle__link {
+    display: inline-block;
+    transition: color .4s ease-in-out;
+}
+
+.form__subtitle__link:hover,
+.form__subtitle__link.active {
+    color: #FFB11B;
 }
 
 input,

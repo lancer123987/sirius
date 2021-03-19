@@ -1,0 +1,91 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width" />
+    <title>球員成績登錄│Sirius</title>
+    <meta name="description" content="球員成績登錄│Sirius">
+
+    <meta property="og:title" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="assets/images/logo.png">
+    <meta property="og:description" content="">
+
+    <link rel="icon" href="assets/images/common_ico/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="assets/css/common/common.css">
+    <link rel="stylesheet" href="assets/css/member_push.css">
+</head>
+
+<body>
+    <header>
+        <div id="logo" class="logo">
+            <logo></logo>
+        </div>
+        <input id="mainMebuCheck" class="mainMebuCheck" type="checkbox">
+        <ul id="mainMenu" class="c-mainMenu">
+            <menu-item v-for=" item in menu" v-bind:item="item"></menu-item>
+        </ul>
+        <label class="navBt" for="mainMebuCheck"><span></span><span></span><span></span></label>
+    </header>
+    <main>
+        <div class="form">
+            <h1 class="form__title">球員成績登錄</h1>
+            <select name="game_date">
+                <option value="" disabled selected hidden>比賽場次</option>
+            </select>
+            <select name="game_member">
+                <option value="" disabled selected hidden>球員</option>
+            </select>
+            <h3 class="form__subtitle">
+                <a class="form__subtitle__link active" href="javascript:void(0);">打擊</a>
+                <a class="form__subtitle__link" href="member_defend_push.html">守備</a>
+                <a class="form__subtitle__link" href="member_pitch_push.html">投球</a>
+            </h3>
+            <input type="text" name="h_pa" placeholder="打席">
+            <input type="text" name="h_ab" placeholder="打數">
+            <input type="text" name="h_1h" placeholder="一安">
+            <input type="text" name="h_2h" placeholder="二安">
+            <input type="text" name="h_3h" placeholder="三安">
+            <input type="text" name="h_hr" placeholder="全壘打">
+            <input type="text" name="h_rbi" placeholder="打點">
+            <input type="text" name="h_r" placeholder="得分">
+            <input type="text" name="h_bb" placeholder="四壞">
+            <input type="text" name="h_db" placeholder="觸身">
+            <input type="text" name="h_k" placeholder="三振">
+            <input type="text" name="h_fc" placeholder="野選">
+            <input type="text" name="h_dp" placeholder="雙殺">
+            <input type="text" name="h_tp" placeholder="三殺">
+            <input type="text" name="h_sf" placeholder="高飛犧牲">
+            <input type="text" name="h_sh" placeholder="犧牲短打">
+            <input type="text" name="h_error" placeholder="失誤上壘">
+            <input type="text" name="h_sb" placeholder="盜壘成功">
+            <input type="text" name="h_cs" placeholder="盜壘失敗">
+            <input type="text" name="h_fly" placeholder="飛球">
+            <input type="text" name="h_roll" placeholder="滾地">
+            <button id="submit">送出</button>
+        </div>
+    </main>
+    <footer></footer>
+</body>
+
+<!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-app.js"></script>
+
+<!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+<script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-analytics.js"></script>
+
+<!-- Add Firebase products that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-firestore.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="assets/js/common/plugin/jquery-3.4.1.min.js"></script>
+<script src="assets/js/common/plugin/vue.js"></script>
+<script src="assets/js/common/common.js"></script>
+<script src="assets/js/member_attack_push.js"></script>
+
+</html>

@@ -18,8 +18,11 @@ var mainMenu = new Vue({
 
 $(document).ready(function() {
     let link = location.href.split('data.html?member')[1];
-
-    $('.data__inner__head__number').text(link);
+    boxNumber = parseInt(link);
+    if (boxNumber < 10) {
+        boxNumber = "0" + boxNumber;
+    } else {}
+    $('.data__inner__head__number').text(boxNumber);
 
     var db = firebase.firestore();
     var ref = db.collection('SiriusMember').doc(link);
