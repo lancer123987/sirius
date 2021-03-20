@@ -85,6 +85,7 @@ main {
     font-size: 32px;
     line-height: 1;
     font-weight: bold;
+    text-transform: uppercase;
 }
 
 @media only screen and (max-width: 1200px) {

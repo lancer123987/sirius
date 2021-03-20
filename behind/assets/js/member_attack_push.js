@@ -44,7 +44,9 @@ $(document).ready(function() {
             h_k = parseInt($('input[name="h_k"]').val()), //三振
             h_fc = parseInt($('input[name="h_fc"]').val()), //野選
             h_dp = parseInt($('input[name="h_dp"]').val()), //雙殺
+            h_dph = parseInt($('input[name="h_dph"]').val()), //雙殺打
             h_tp = parseInt($('input[name="h_tp"]').val()), //三殺
+            h_tph = parseInt($('input[name="h_tph"]').val()), //三殺打
             h_sf = parseInt($('input[name="h_sf"]').val()), //高飛犧牲
             h_sh = parseInt($('input[name="h_sh"]').val()), //犧牲短打
             h_error = parseInt($('input[name="h_error"]').val()), //失誤上壘
@@ -68,7 +70,9 @@ $(document).ready(function() {
             觸身: h_db,
             野選: h_fc,
             雙殺: h_dp,
+            雙殺打: h_dph,
             三殺: h_tp,
+            三殺打: h_tph,
             高飛犧牲: h_sf,
             犧牲短打: h_sh,
             飛球: h_fly,
