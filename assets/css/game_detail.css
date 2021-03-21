@@ -176,4 +176,5 @@ p.game__board__block__title {
 
 .game__content__inner__item__result.redWword {
     color: #CB1B45;
+    font-weight: bold;
 }

@@ -88,9 +88,9 @@ $(document).ready(function() {
                                 $(this).addClass('red');
                             } else if (text == '保送' || text == '觸身') {
                                 $(this).addClass('green');
-                            } else if (text == '失誤') {
+                            } else if (text == '高犧' || text == '犧觸') {
                                 $(this).addClass('yellow');
-                            } else if (text == '出局' || text == '三振' || text == '野選') {
+                            } else if (text == '出局' || text == '三振' || text == '野選' || text == '失誤') {
                                 $(this).addClass('blue');
                             } else {}
                         });
