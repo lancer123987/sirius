@@ -1,5 +1,6 @@
 $(document).ready(function() {
     let ref = db.collection('game');
+    //let ref = db.collection('game').orderBy('-', 'desc');
     let boxGame = [];
     let boxEnemy = [];
     let boxPlace = [];
