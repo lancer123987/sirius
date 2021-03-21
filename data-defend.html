@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width" />
+    <title>球員紀錄│Sirius</title>
+    <meta name="description" content="球員紀錄">
+
+    <meta property="og:title" content="">
+    <meta property="og:url" content="">
+    <meta property="og:image" content="assets/images/logo.png">
+    <meta property="og:description" content="">
+
+    <link rel="icon" href="assets/images/common_ico/favicon.ico" type="image/x-icon" />
+    <link rel="stylesheet" href="assets/css/common/common.css">
+    <link rel="stylesheet" href="assets/css/data.css">
+</head>
+
+<body>
+    <header>
+        <div id="logo" class="logo">
+            <logo></logo>
+        </div>
+        <input id="mainMebuCheck" class="mainMebuCheck" type="checkbox">
+        <ul id="mainMenu" class="c-mainMenu">
+            <menu-item v-for=" item in menu" v-bind:item="item"></menu-item>
+        </ul>
+        <label class="navBt" for="mainMebuCheck"><span></span><span></span><span></span></label>
+    </header>
+    <main>
+        <div class="c-fixedbg"></div>
+        <aside id="memberAside" class="c-aside">
+            <ul>
+                <member-menu-item v-for=" item in menu" v-bind:item="item"></member-menu-item>
+            </ul>
+            <div class="c-aside__bt"></div>
+        </aside>
+        <div class="data__inner">
+            <div class="data__inner__head">
+                <figure class="data__inner__head__pic">
+                    <img src="assets/images/data/pic.jpg" alt="">
+                </figure>
+                <p class="data__inner__head__number"></p>
+                <p class="data__inner__head__name">Loading...</p>
+            </div>
+            <!--攻擊數據-->
+            <h2 class="data__inner__title">Attack Data</h2>
+            <div class="data__item">
+                <h3 class="data__item__title">打擊率</h3>
+                <p class="data__item__digital" id="avg"></p>
+            </div>
+            <div class="data__item">
+                <h3 class="data__item__title">長打率</h3>
+                <p class="data__item__digital" id="slg"></p>
+            </div>
+            <div class="data__item">
+                <h3 class="data__item__title">上壘率</h3>
+                <p class="data__item__digital" id="obp"></p>
+            </div>
+            <div class="data__item">
+                <h3 class="data__item__title">整體攻擊指數</h3>
+                <p class="data__item__digital" id="ops"></p>
+            </div>
+            <!--守備數據-->
+            <h2 class="data__inner__title">Defend Data</h2>
+            <div class="data__item">
+                <h3 class="data__item__title">守備率</h3>
+                <p class="data__item__digital" id="fp"></p>
+            </div>
+            <!--投球數據-->
+            <h2 class="data__inner__title">Pitcher Data</h2>
+            <div class="data__item">
+                <h3 class="data__item__title">防禦率</h3>
+                <p class="data__item__digital" id="era"></p>
+            </div>
+            <div class="data__item">
+                <h3 class="data__item__title">每局被上壘率</h3>
+                <p class="data__item__digital" id="whip"></p>
+            </div>
+            <div class="data__item">
+                <h3 class="data__item__title">K/9值</h3>
+                <p class="data__item__digital" id="k9"></p>
+            </div>
+            <div class="data__item">
+                <h3 class="data__item__title">BB/9值</h3>
+                <p class="data__item__digital" id="bb9"></p>
+            </div>
+        </div>
+    </main>
+    <footer></footer>
+</body>
+<!-- Insert these scripts at the bottom of the HTML, but before you use any Firebase services -->
+
+<!-- Firebase App (the core Firebase SDK) is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-app.js"></script>
+
+<!-- If you enabled Analytics in your project, add the Firebase SDK for Analytics -->
+<script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-analytics.js"></script>
+
+<!-- Add Firebase products that you want to use -->
+<script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/7.19.0/firebase-firestore.js"></script>
+
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+<script src="assets/js/common/plugin/jquery-3.4.1.min.js"></script>
+<script src="assets/js/common/plugin/vue.js"></script>
+<script src="assets/js/common/common.js"></script>
+<script src="assets/js/data.js"></script>
+
+</html>
