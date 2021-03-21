@@ -129,7 +129,7 @@ p.game__board__block__title {
 .game__content__inner__item p {
     padding: 5px 0;
     background: rgba(255, 255, 255, .2);
-    border-right: 1px solid;
+    border-right: 1px solid #fff;
 }
 
 .game__content__inner__item p:last-child {
@@ -153,4 +153,27 @@ p.game__board__block__title {
 
 .game__content__inner__item__process {
     letter-spacing: 4px;
+}
+
+
+/**結果顏色樣式**/
+
+.game__content__inner__item__result.red {
+    background: rgba(244, 167, 185, .8);
+}
+
+.game__content__inner__item__result.green {
+    background: rgba(123, 162, 63, 1);
+}
+
+.game__content__inner__item__result.blue {
+    background: rgba(38, 135, 133, .1);
+}
+
+.game__content__inner__item__result.yellow {
+    background: rgba(255, 196, 8, .8);
+}
+
+.game__content__inner__item__result.redWword {
+    color: #CB1B45;
 }
