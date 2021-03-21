@@ -81,26 +81,30 @@ $(document).ready(function() {
 
                     $(innerBId).append('<div class=\"game__content__inner__item\"><p class=\"game__content__inner__item__hit\">' + hitter + '</p><p class=\"game__content__inner__item__pitcher\">' + pitcher + '</p><p class=\"game__content__inner__item__process\">' + process + '</p><p class=\"game__content__inner__item__direction\">' + direction + '</p><p class=\"game__content__inner__item__result\">' + result + '</p><p class=\"game__content__inner__item__remark\">' + remark + '</p><p class=\"game__content__inner__item__score\">' + score + '</p></div></div></div>');
 
-                    $('.game__content__inner__item').each(function() {
-                        $(this).find('.game__content__inner__item__result').each(function() {
-                            let text = $(this).text();
-                            if (text == '一安' || text == '二安' || text == '三安' || text == '全壘打') {
-                                $(this).addClass('red');
-                            } else if (text == '保送' || text == '觸身') {
-                                $(this).addClass('green');
-                            } else if (text == '高犧' || text == '犧觸') {
-                                $(this).addClass('yellow');
-                            } else if (text == '出局' || text == '三振' || text == '野選' || text == '失誤') {
-                                $(this).addClass('blue');
-                            } else {}
-                        });
+                    // $('.game__content__inner__item').each(function() {
+                    //     $(this).find('.game__content__inner__item__result').each(function() {
+                    //         let text = $(this).text();
+                    //         if (text == '一安' || text == '二安' || text == '三安' || text == '全壘打') {
+                    //             $(this).addClass('red');
+                    //         } else if (text == '保送' || text == '觸身') {
+                    //             $(this).addClass('green');
+                    //         } else if (text == '高犧' || text == '犧觸') {
+                    //             $(this).addClass('yellow');
+                    //         } else if (text == '出局' || text == '三振' || text == '野選' || text == '失誤') {
+                    //             $(this).addClass('blue');
+                    //         } else {}
+                    //     });
 
-                        $(this).find('.game__content__inner__item__score').each(function() {
-                            let text = $(this).text();
-                            if (text != '得分' & text != '0') {
-                                $(this).siblings('.game__content__inner__item__result').addClass('redWword');
-                            } else {}
-                        });
+                    //     $(this).find('.game__content__inner__item__score').each(function() {
+                    //         let text = $(this).text();
+                    //         if (text != '得分' & text != '0') {
+                    //             $(this).siblings('.game__content__inner__item__result').addClass('redWword');
+                    //         } else {}
+                    //     });
+                    // });
+
+                    $('.game__content__title').click(function() {
+                        $(this).next('.game__content__inner').stop().slideToggle();
                     });
                 });
             });
