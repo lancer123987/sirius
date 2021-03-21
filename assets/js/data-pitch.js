@@ -41,11 +41,11 @@ $(document).ready(function() {
                 h3 = doc.data().三安,
                 hr = doc.data().全壘打,
                 bb = doc.data().四壞,
-                db = doc.data().觸身,
+                deadball = doc.data().觸身,
                 ab = doc.data().打數;
 
             let avg = Math.round(((h1 + h2 + h3 + hr) / ab) * 1000) / 1000,
-                obp = Math.round(((h1 + h2 + h3 + hr + bb + db) / (ab + bb + db)) * 1000) / 1000,
+                obp = Math.round(((h1 + h2 + h3 + hr + bb + deadball) / (ab + bb + deadball)) * 1000) / 1000,
                 slg = Math.round(((h2 * 2 + h3 * 3 + hr * 4) / ab) * 1000) / 1000,
                 ops = slg + obp;
 
@@ -56,23 +56,43 @@ $(document).ready(function() {
         });
     });
 
+
+    let ip = [],
+        k = [],
+        bb = [],
+        deadball = [],
+        h1 = [],
+        h2 = [],
+        h3 = [],
+        hr = [],
+        er = [];
     //投球總覽
     record.where('投手犯規', '>=', 0).get().then(querySnapshot => {
+        let ip = 0,
+            k = 0,
+            bb = 0,
+            deadball = 0,
+            h1 = 0,
+            h2 = 0,
+            h3 = 0,
+            hr = 0,
+            er = 0;
+
         querySnapshot.forEach(doc => {
-            let ip = doc.data().局數 / 3,
-                k = doc.data().三振,
-                bb = doc.data().四壞,
-                db = doc.data().觸身,
-                h1 = doc.data().一安,
-                h2 = doc.data().二安,
-                h3 = doc.data().三安,
-                hr = doc.data().全壘打,
-                er = doc.data().責失;
+            ip += doc.data().局數 / 3;
+            k += doc.data().三振;
+            bb += doc.data().四壞;
+            deadball += doc.data().觸身;
+            h1 += doc.data().一安;
+            h2 += doc.data().二安;
+            h3 += doc.data().三安;
+            hr += doc.data().全壘打;
+            er += doc.data().責失;
 
             let era = Math.round((er / ip) * 9 * 1000) / 1000,
                 k9 = Math.round(k / ip * 9 * 1000) / 1000,
-                bb9 = Math.round(((bb + db) / ip) * 9 * 1000) / 1000,
-                whip = Math.round(((h1 + h2 + h3 + hr + bb + db) / ip) * 1000) / 1000;
+                bb9 = Math.round(((bb + deadball) / ip) * 9 * 1000) / 1000,
+                whip = Math.round(((h1 + h2 + h3 + hr + bb + deadball) / ip) * 1000) / 1000;
 
             $('#era').text(era);
             $('#whip').text(whip);
