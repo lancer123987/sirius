@@ -44,15 +44,20 @@
                 <p class="data__inner__head__number"></p>
                 <p class="data__inner__head__name">Loading...</p>
             </div>
+            <div class="data__inner__filter">
+                <select name="dataFilter">
+                    <option value="all">總覽</option>
+                </select>
+            </div>
             <!--攻擊數據-->
-            <h2 class="data__inner__title">Attack Data</h2>
+            <h2 class="data__inner__title">攻擊總覽</h2>
             <div class="data__item">
                 <h3 class="data__item__title">打擊率</h3>
                 <p class="data__item__digital" id="avg"></p>
             </div>
             <div class="data__item">
-                <h3 class="data__item__title">長打率</h3>
-                <p class="data__item__digital" id="slg"></p>
+                <h3 class="data__item__title">長打指數</h3>
+                <p class="data__item__digital" id="slgAvg"></p>
             </div>
             <div class="data__item">
                 <h3 class="data__item__title">上壘率</h3>
@@ -62,29 +67,61 @@
                 <h3 class="data__item__title">整體攻擊指數</h3>
                 <p class="data__item__digital" id="ops"></p>
             </div>
-            <!--守備數據-->
-            <h2 class="data__inner__title">Defend Data</h2>
+            <h2 class="data__inner__title">打席&打數</h2>
             <div class="data__item">
-                <h3 class="data__item__title">守備率</h3>
-                <p class="data__item__digital" id="fp"></p>
-            </div>
-            <!--投球數據-->
-            <h2 class="data__inner__title">Pitcher Data</h2>
-            <div class="data__item">
-                <h3 class="data__item__title">防禦率</h3>
-                <p class="data__item__digital" id="era"></p>
+                <h3 class="data__item__title">打席</h3>
+                <p class="data__item__digital" id="pa"></p>
             </div>
             <div class="data__item">
-                <h3 class="data__item__title">每局被上壘率</h3>
-                <p class="data__item__digital" id="whip"></p>
+                <h3 class="data__item__title">打數</h3>
+                <p class="data__item__digital" id="ab"></p>
+            </div>
+            <h2 class="data__inner__title">安打數據</h2>
+            <div class="data__item">
+                <h3 class="data__item__title">一安</h3>
+                <p class="data__item__digital" id="h1"></p>
             </div>
             <div class="data__item">
-                <h3 class="data__item__title">K/9值</h3>
-                <p class="data__item__digital" id="k9"></p>
+                <h3 class="data__item__title">二安</h3>
+                <p class="data__item__digital" id="h2"></p>
             </div>
             <div class="data__item">
-                <h3 class="data__item__title">BB/9值</h3>
-                <p class="data__item__digital" id="bb9"></p>
+                <h3 class="data__item__title">三安</h3>
+                <p class="data__item__digital" id="h3"></p>
+            </div>
+            <div class="data__item">
+                <h3 class="data__item__title">全壘打</h3>
+                <p class="data__item__digital" id="hr"></p>
+            </div>
+            <h2 class="data__inner__title">三振&保送數據</h2>
+            <div class="data__item">
+                <h3 class="data__item__title">三振數</h3>
+                <p class="data__item__digital" id="k"></p>
+            </div>
+            <div class="data__item">
+                <h3 class="data__item__title">保送數</h3>
+                <p class="data__item__digital" id="bb"></p>
+            </div>
+            <div class="data__item">
+                <h3 class="data__item__title">三振率</h3>
+                <p class="data__item__digital" id="kAvg"></p>
+            </div>
+            <div class="data__item">
+                <h3 class="data__item__title">保送率</h3>
+                <p class="data__item__digital" id="bbAvg"></p>
+            </div>
+            <h2 class="data__inner__title">滾飛球數據</h2>
+            <div class="data__item">
+                <h3 class="data__item__title">飛球數</h3>
+                <p class="data__item__digital" id="fly"></p>
+            </div>
+            <div class="data__item">
+                <h3 class="data__item__title">滾地球數</h3>
+                <p class="data__item__digital" id="roll"></p>
+            </div>
+            <div class="data__item">
+                <h3 class="data__item__title">滾飛比</h3>
+                <p class="data__item__digital" id="flyRollAvg"></p>
             </div>
         </div>
     </main>
@@ -107,6 +144,6 @@
 <script src="assets/js/common/plugin/jquery-3.4.1.min.js"></script>
 <script src="assets/js/common/plugin/vue.js"></script>
 <script src="assets/js/common/common.js"></script>
-<script src="assets/js/data.js"></script>
+<script src="assets/js/data-attack.js"></script>
 
 </html>
