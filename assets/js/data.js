@@ -55,7 +55,7 @@ $(document).ready(function() {
             let avg = Math.round(((h1 + h2 + h3 + hr) / ab) * 1000) / 1000,
                 obp = Math.round(((h1 + h2 + h3 + hr + bb + deadball) / (ab + bb + deadball)) * 1000) / 1000,
                 slg = Math.round(((h1 + h2 * 2 + h3 * 3 + hr * 4) / ab) * 1000) / 1000,
-                slgAvg = slg / avg,
+                slgAvg = Math.round(slg / avg * 1000) / 1000,
                 ops = slg + obp;
             console.log(avg);
             $('#avg').text(avg);
