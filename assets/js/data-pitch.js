@@ -33,39 +33,6 @@ $(document).ready(function() {
 
     let record = db.collection('SiriusMember').doc(link).collection('record');
 
-    //攻擊總覽
-    record.where('打點', '>=', 0).get().then(querySnapshot => {
-        querySnapshot.forEach(doc => {
-            let h1 = doc.data().一安,
-                h2 = doc.data().二安,
-                h3 = doc.data().三安,
-                hr = doc.data().全壘打,
-                bb = doc.data().四壞,
-                deadball = doc.data().觸身,
-                ab = doc.data().打數;
-
-            let avg = Math.round(((h1 + h2 + h3 + hr) / ab) * 1000) / 1000,
-                obp = Math.round(((h1 + h2 + h3 + hr + bb + deadball) / (ab + bb + deadball)) * 1000) / 1000,
-                slg = Math.round(((h2 * 2 + h3 * 3 + hr * 4) / ab) * 1000) / 1000,
-                ops = slg + obp;
-
-            $('#avg').text(avg);
-            $('#obp').text(obp);
-            $('#slg').text(slg);
-            $('#ops').text(ops);
-        });
-    });
-
-
-    let ip = [],
-        k = [],
-        bb = [],
-        deadball = [],
-        h1 = [],
-        h2 = [],
-        h3 = [],
-        hr = [],
-        er = [];
     //投球總覽
     record.where('投手犯規', '>=', 0).get().then(querySnapshot => {
         let ip = 0,
@@ -98,18 +65,6 @@ $(document).ready(function() {
             $('#whip').text(whip);
             $('#k9').text(k9);
             $('#bb9').text(bb9);
-        });
-    });
-
-    //守備總覽
-    record.where('守備機會', '>=', 0).get().then(querySnapshot => {
-        querySnapshot.forEach(doc => {
-            let po = doc.data().刺殺,
-                a = doc.data().助殺,
-                tc = doc.data().守備機會;
-
-            let fp = Math.round(((po + a) / tc) * 1000) / 1000;
-            $('#fp').text(fp);
         });
     });
 });

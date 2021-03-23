@@ -35,20 +35,28 @@ $(document).ready(function() {
 
     //攻擊總覽
     record.where('打點', '>=', 0).get().then(querySnapshot => {
+        let h1 = 0,
+            h2 = 0,
+            h3 = 0,
+            hr = 0,
+            bb = 0,
+            deadball = 0,
+            ab = 0;
+
         querySnapshot.forEach(doc => {
-            let h1 = doc.data().一安,
-                h2 = doc.data().二安,
-                h3 = doc.data().三安,
-                hr = doc.data().全壘打,
-                bb = doc.data().四壞,
-                deadball = doc.data().觸身,
-                ab = doc.data().打數;
+            h1 += doc.data().一安;
+            h2 += doc.data().二安;
+            h3 += doc.data().三安;
+            hr += doc.data().全壘打;
+            bb += doc.data().四壞;
+            deadball += doc.data().觸身;
+            ab += doc.data().打數;
 
             let avg = Math.round(((h1 + h2 + h3 + hr) / ab) * 1000) / 1000,
                 obp = Math.round(((h1 + h2 + h3 + hr + bb + deadball) / (ab + bb + deadball)) * 1000) / 1000,
                 slg = Math.round(((h2 * 2 + h3 * 3 + hr * 4) / ab) * 1000) / 1000,
                 ops = slg + obp;
-
+            console.log(avg);
             $('#avg').text(avg);
             $('#obp').text(obp);
             $('#slg').text(slg);
@@ -92,10 +100,13 @@ $(document).ready(function() {
 
     //守備總覽
     record.where('守備機會', '>=', 0).get().then(querySnapshot => {
+        let po = 0,
+            a = 0,
+            tc = 0;
         querySnapshot.forEach(doc => {
-            let po = doc.data().刺殺,
-                a = doc.data().助殺,
-                tc = doc.data().守備機會;
+            po += doc.data().刺殺;
+            a += doc.data().助殺;
+            tc += doc.data().守備機會;
 
             let fp = Math.round(((po + a) / tc) * 1000) / 1000;
             $('#fp').text(fp);
