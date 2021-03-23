@@ -87,10 +87,10 @@ $(document).ready(function() {
             hr += doc.data().全壘打;
             er += doc.data().責失;
 
-            let era = Math.round((er / ip) * 9 * 100) / 100,
-                k9 = Math.round(k / ip * 9 * 100) / 100,
-                bb9 = Math.round(((bb + deadball) / ip) * 9 * 100) / 100,
-                whip = Math.round(((h1 + h2 + h3 + hr + bb + deadball) / ip) * 100) / 100;
+            let era = Math.round((er / ip) * 9 * 1000) / 1000,
+                k9 = Math.round(k / ip * 9 * 1000) / 1000,
+                bb9 = Math.round(((bb + deadball) / ip) * 9 * 1000) / 1000,
+                whip = Math.round(((h1 + h2 + h3 + hr + bb + deadball) / ip) * 1000) / 1000;
 
             $('#era').text(era);
             $('#whip').text(whip);
