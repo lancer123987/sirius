@@ -71,6 +71,22 @@ main {
     transition: width .4s ease-in-out;
 }
 
+.data__inner__filter {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    align-content: center;
+    justify-items: center;
+    justify-content: space-between;
+    width: 100%;
+    margin: 20px 10px;
+}
+
+.data__inner__filter select {
+    width: calc(50% - 10px);
+    padding: 10px 15px 10px 10px;
+}
+
 .data__item__title {
     width: 100%;
     font-size: 14px;
@@ -109,10 +125,17 @@ main {
     }
     .data__inner__head {
         padding: 10px 15px;
-        margin: 0 5px 20px 5px;
+        margin: 0 0 20px 0;
     }
     .data__inner__head__pic {
         display: none;
+    }
+    .data__inner__filter {
+        margin: 20px 0 10px 0;
+    }
+    .data__inner__filter select {
+        width: 100%;
+        margin: 0 auto 10px auto;
     }
     .data__inner__title {
         width: calc(100% - 10px);
