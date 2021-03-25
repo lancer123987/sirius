@@ -76,15 +76,25 @@ main {
     flex-wrap: wrap;
     align-items: center;
     align-content: center;
-    justify-items: center;
-    justify-content: space-between;
+    justify-items: flex-start;
+    justify-content: flex-start;
     width: 100%;
     margin: 20px 10px;
 }
 
 .data__inner__filter select {
-    width: calc(50% - 10px);
+    width: calc((100% - 20px) / 3);
     padding: 10px 15px 10px 10px;
+    margin: 0 10px 0 0;
+}
+
+.data__inner__filter select:last-of-type {
+    margin: 0;
+}
+
+.data__inner__filter select[name="yearFilter"],
+.data__inner__filter select[name="dateFilter"] {
+    display: none;
 }
 
 .data__item__title {

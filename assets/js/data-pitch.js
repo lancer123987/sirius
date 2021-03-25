@@ -31,21 +31,99 @@ $(document).ready(function() {
         $('.data__inner__head__name').text(doc.data().name[1]);
     });
 
+    //比賽類型寫入
+    let gameType = db.collection('gameType');
+    gameType.get().then(querySnapshot => {
+        querySnapshot.forEach(doc => {
+            $('select[name="dataFilter"]').append('<option value=\"' + doc.id + '\">' + doc.id + '<\/option>');
+        });
+    });
+
     let record = db.collection('SiriusMember').doc(link).collection('record');
 
-    //投球總覽
-    record.where('投手犯規', '>=', 0).get().then(querySnapshot => {
-        let ip = 0,
-            k = 0,
-            bb = 0,
-            deadball = 0,
-            h1 = 0,
-            h2 = 0,
-            h3 = 0,
-            hr = 0,
-            er = 0;
+    function pitchAll() {
+        //投球總覽
+        record.where('投手犯規', '>=', 0).get().then(querySnapshot => {
+            let ip = 0,
+                k = 0,
+                bb = 0,
+                deadball = 0,
+                h1 = 0,
+                h2 = 0,
+                h3 = 0,
+                hr = 0,
+                er = 0;
 
-        querySnapshot.forEach(doc => {
+            querySnapshot.forEach(doc => {
+                ip += doc.data().局數 / 3;
+                k += doc.data().三振;
+                bb += doc.data().四壞;
+                deadball += doc.data().觸身;
+                h1 += doc.data().一安;
+                h2 += doc.data().二安;
+                h3 += doc.data().三安;
+                hr += doc.data().全壘打;
+                er += doc.data().責失;
+
+                let era = Math.round((er / ip) * 9 * 1000) / 1000,
+                    k9 = Math.round(k / ip * 9 * 1000) / 1000,
+                    bb9 = Math.round(((bb + deadball) / ip) * 9 * 1000) / 1000,
+                    whip = Math.round(((h1 + h2 + h3 + hr + bb + deadball) / ip) * 1000) / 1000;
+
+                $('#era').text(era);
+                $('#whip').text(whip);
+                $('#k9').text(k9);
+                $('#bb9').text(bb9);
+            });
+        });
+    }
+
+    pitchAll();
+    $('select[name="dataFilter"]').change(function() {
+        let dataFilterVal = $(this).val();
+        console.log(dataFilterVal);
+        if (dataFilterVal == 'all') {
+            $('select[name="yearFilter"]').empty().append('<option value=\"\">比賽年度<\/option>').hide();
+            $('select[name="dateFilter"]').empty().append('<option value=\"\">比賽日期<\/option>').hide();
+            pitchAll();
+        } else {
+            $('select[name="yearFilter"]').show();
+            let gameType = db.collection('gameType');
+            gameType.get().then(querySnapshot => {
+                querySnapshot.forEach(doc => {
+                    let year = doc.data().year;
+                    for (var i = 0; i < year.length; i++) {
+                        $('select[name="yearFilter"]').append('<option value=\"' + year[i] + '\">' + year[i] + '<\/option>');
+                    }
+                });
+            });
+        }
+    });
+
+    $('select[name="yearFilter"]').change(function() {
+        let yearFilterVal = $(this).val();
+        let gamefilter = db.collection('game');
+        $('select[name="dateFilter"]').empty().append('<option value=\"\">比賽日期<\/option>').show();
+        gamefilter.where('比賽年度', '==', yearFilterVal).get().then(querySnapshot => {
+            querySnapshot.forEach(doc => {
+                $('select[name="dateFilter"]').append('<option value=\"' + doc.id + '\">' + doc.id + '<\/option>');
+            });
+        });
+    });
+    $('select[name="dateFilter"]').change(function() {
+        let dateFilterVal = $(this).val();
+
+        db.collection('SiriusMember').doc(link).collection('record').doc(dateFilterVal + '-pitch').get().then(doc => {
+            let ip = 0,
+                k = 0,
+                bb = 0,
+                deadball = 0,
+                h1 = 0,
+                h2 = 0,
+                h3 = 0,
+                hr = 0,
+                er = 0;
+
             ip += doc.data().局數 / 3;
             k += doc.data().三振;
             bb += doc.data().四壞;

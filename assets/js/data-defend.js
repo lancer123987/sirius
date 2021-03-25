@@ -31,20 +31,78 @@ $(document).ready(function() {
         $('.data__inner__head__name').text(doc.data().name[1]);
     });
 
-    let record = db.collection('SiriusMember').doc(link).collection('record');
-
-    //守備總覽
-    record.where('守備機會', '>=', 0).get().then(querySnapshot => {
-        let po = 0,
-            a = 0,
-            tc = 0;
+    //比賽類型寫入
+    let gameType = db.collection('gameType');
+    gameType.get().then(querySnapshot => {
         querySnapshot.forEach(doc => {
-            po += doc.data().刺殺;
-            a += doc.data().助殺;
-            tc += doc.data().守備機會;
-
-            let fp = Math.round(((po + a) / tc) * 1000) / 1000;
-            $('#fp').text(fp);
+            $('select[name="dataFilter"]').append('<option value=\"' + doc.id + '\">' + doc.id + '<\/option>');
         });
     });
+
+    let record = db.collection('SiriusMember').doc(link).collection('record');
+
+    function defendAll() {
+        //守備總覽
+        record.where('守備機會', '>=', 0).get().then(querySnapshot => {
+            let po = 0,
+                a = 0,
+                tc = 0;
+            querySnapshot.forEach(doc => {
+                po += doc.data().刺殺;
+                a += doc.data().助殺;
+                tc += doc.data().守備機會;
+
+                let fp = Math.round(((po + a) / tc) * 1000) / 1000;
+                $('#fp').text(fp);
+            });
+        });
+    }
+
+    defendAll();
+
+    $('select[name="dataFilter"]').change(function() {
+        let dataFilterVal = $(this).val();
+        if (dataFilterVal == 'all') {
+            $('select[name="yearFilter"]').empty().append('<option value=\"\">比賽年度<\/option>').hide();
+            $('select[name="dateFilter"]').empty().append('<option value=\"\">比賽日期<\/option>').hide();
+            attackAll();
+        } else {
+            $('select[name="yearFilter"]').show();
+            let gameType = db.collection('gameType');
+            gameType.get().then(querySnapshot => {
+                querySnapshot.forEach(doc => {
+                    let year = doc.data().year;
+                    for (var i = 0; i < year.length; i++) {
+                        $('select[name="yearFilter"]').append('<option value=\"' + year[i] + '\">' + year[i] + '<\/option>');
+                    }
+                });
+            });
+        }
+    });
+
+    $('select[name="yearFilter"]').change(function() {
+        let yearFilterVal = $(this).val();
+        let gamefilter = db.collection('game');
+        $('select[name="dateFilter"]').empty().append('<option value=\"\">比賽日期<\/option>').show();
+        gamefilter.where('比賽年度', '==', yearFilterVal).get().then(querySnapshot => {
+            querySnapshot.forEach(doc => {
+                $('select[name="dateFilter"]').append('<option value=\"' + doc.id + '\">' + doc.id + '<\/option>');
+            });
+        });
+    });
+
+    // $('select[name="dateFilter"]').change(function() {
+    //     let dateFilterVal = $(this).val();
+    //     db.collection('SiriusMember').doc(link).collection('record').doc(dateFilterVal + '-defend').get().then(doc => {
+    //         let po = 0,
+    //             a = 0,
+    //             tc = 0;
+    //         po += doc.data().刺殺;
+    //         a += doc.data().助殺;
+    //         tc += doc.data().守備機會;
+
+    //         let fp = Math.round(((po + a) / tc) * 1000) / 1000;
+    //         $('#fp').text(fp);
+    //     });
+    // });
 });
