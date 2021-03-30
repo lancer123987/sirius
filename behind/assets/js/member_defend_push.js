@@ -34,6 +34,7 @@ $(document).ready(function() {
         let d_position = $('select[name="d_position"]').val(), //位置
             d_tc = parseInt($('input[name="d_tc"]').val()), //守備機會
             d_po = parseInt($('input[name="d_po"]').val()), //刺殺
+            //d_puto = parseInt($('input[name="d_puto"]').val()), //接殺
             d_a = parseInt($('input[name="d_a"]').val()), //助殺
             d_dp = parseInt($('input[name="d_dp"]').val()), //雙殺
             d_tp = parseInt($('input[name="d_tp"]').val()), //三殺

@@ -86,7 +86,7 @@ $(document).ready(function() {
                     kAvg = Math.round(k / ab * 1000) / 1000,
                     bbAvg = Math.round(bb / ab * 1000) / 1000,
                     flyRollAvg = Math.round(roll / fly * 1000) / 1000,
-                    ops = slg + obp;
+                    ops = Math.round((slg + obp) * 1000) / 1000;
 
                 $('#avg').text(avg);
                 $('#obp').text(obp);
@@ -189,7 +189,7 @@ $(document).ready(function() {
                 kAvg = Math.round(k / ab * 1000) / 1000,
                 bbAvg = Math.round(bb / ab * 1000) / 1000,
                 flyRollAvg = Math.round(roll / fly * 1000) / 1000,
-                ops = slg + obp;
+                ops = Math.round((slg + obp) * 1000) / 1000;
 
             $('#avg').text(avg);
             $('#obp').text(obp);
