@@ -53,7 +53,8 @@ $(document).ready(function() {
             h_sb = parseInt($('input[name="h_sb"]').val()), //盜壘成功
             h_cs = parseInt($('input[name="h_cs"]').val()), //盜壘失敗
             h_fly = parseInt($('input[name="h_fly"]').val()), //飛球
-            h_roll = parseInt($('input[name="h_roll"]').val()); //滾地
+            h_roll = parseInt($('input[name="h_roll"]').val()), //滾地
+            h_hinder = parseInt($('input[name="h_hinder"]').val()); //妨礙打擊
 
         //進攻數據
         db.collection('SiriusMember').doc(game_member).collection('record').doc(game_date + '-attack').set({
@@ -79,7 +80,8 @@ $(document).ready(function() {
             滾地: h_roll,
             失誤上壘: h_error,
             盜壘成功: h_sb,
-            盜壘失敗: h_cs
+            盜壘失敗: h_cs,
+            妨礙打擊: h_hinder
         });
     });
 });

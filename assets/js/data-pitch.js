@@ -52,7 +52,10 @@ $(document).ready(function() {
                 h2 = 0,
                 h3 = 0,
                 hr = 0,
+                strike = 0,
+                bad = 0,
                 er = 0;
+
 
             querySnapshot.forEach(doc => {
                 ip += doc.data().局數 / 3;
@@ -63,17 +66,29 @@ $(document).ready(function() {
                 h2 += doc.data().二安;
                 h3 += doc.data().三安;
                 hr += doc.data().全壘打;
+                strike += doc.data().好球數;
+                bad += doc.data().壞球數;
                 er += doc.data().責失;
 
                 let era = Math.round((er / ip) * 9 * 1000) / 1000,
                     k9 = Math.round(k / ip * 9 * 1000) / 1000,
                     bb9 = Math.round(((bb + deadball) / ip) * 9 * 1000) / 1000,
-                    whip = Math.round(((h1 + h2 + h3 + hr + bb + deadball) / ip) * 1000) / 1000;
+                    whip = Math.round(((h1 + h2 + h3 + hr + bb + deadball) / ip) * 1000) / 1000,
+                    strikeAvg = Math.round(strike / (strike + bad) * 1000) / 1000;
 
                 $('#era').text(era);
                 $('#whip').text(whip);
                 $('#k9').text(k9);
                 $('#bb9').text(bb9);
+                $('#strike').text(strike);
+                $('#bad').text(bad);
+                $('#strikeAvg').text(strikeAvg);
+                $('#h1').text(h1);
+                $('#h2').text(h2);
+                $('#h3').text(h3);
+                $('#hr').text(hr);
+                $('#k').text(k);
+                $('#bb').text(bb);
             });
         });
     }
@@ -122,6 +137,8 @@ $(document).ready(function() {
                 h2 = 0,
                 h3 = 0,
                 hr = 0,
+                strike = 0,
+                bad = 0,
                 er = 0;
 
             ip += doc.data().局數 / 3;
@@ -132,17 +149,29 @@ $(document).ready(function() {
             h2 += doc.data().二安;
             h3 += doc.data().三安;
             hr += doc.data().全壘打;
+            strike += doc.data().好球數;
+            bad += doc.data().壞球數;
             er += doc.data().責失;
 
             let era = Math.round((er / ip) * 9 * 1000) / 1000,
                 k9 = Math.round(k / ip * 9 * 1000) / 1000,
                 bb9 = Math.round(((bb + deadball) / ip) * 9 * 1000) / 1000,
-                whip = Math.round(((h1 + h2 + h3 + hr + bb + deadball) / ip) * 1000) / 1000;
+                whip = Math.round(((h1 + h2 + h3 + hr + bb + deadball) / ip) * 1000) / 1000,
+                strikeAvg = Math.round(strike / (strike + bad) * 1000) / 1000;
 
             $('#era').text(era);
             $('#whip').text(whip);
             $('#k9').text(k9);
             $('#bb9').text(bb9);
+            $('#strike').text(strike);
+            $('#bad').text(bad);
+            $('#strikeAvg').text(strikeAvg);
+            $('#h1').text(h1);
+            $('#h2').text(h2);
+            $('#h3').text(h3);
+            $('#hr').text(hr);
+            $('#k').text(k);
+            $('#bb').text(bb);
         });
     });
 });
