@@ -1,3 +1,5 @@
+let link = location.href.split('data.html?member')[1];
+
 //球員資料選單
 Vue.component('member-menu-item', {
     props: ['item'],
@@ -8,16 +10,15 @@ var mainMenu = new Vue({
     el: '#memberAside',
     data: {
         menu: [
-            { listMenu: ['Basic', '#', 'assets/images/common/icon_member_white.svg'] },
-            { listMenu: ['Attack', '#', 'assets/images/common/icon_attack_white.svg'] },
-            { listMenu: ['Defend', '#', 'assets/images/common/icon_glove_white.svg'] },
-            { listMenu: ['Pitcher', '#', 'assets/images/common/icon_baseball_white.svg'] }
+            { listMenu: ['Basic', 'data.html?member' + link, 'assets/images/common/icon_member_white.svg'] },
+            { listMenu: ['Attack', 'data-attack.html?member' + link, 'assets/images/common/icon_attack_white.svg'] },
+            { listMenu: ['Defend', 'data-defend.html?member' + link, 'assets/images/common/icon_glove_white.svg'] },
+            { listMenu: ['Pitcher', 'data-pitch.html?member' + link, 'assets/images/common/icon_baseball_white.svg'] }
         ]
     }
 })
 
 $(document).ready(function() {
-    let link = location.href.split('data.html?member')[1];
     boxNumber = parseInt(link);
     if (boxNumber < 10) {
         boxNumber = "0" + boxNumber;
@@ -108,7 +109,6 @@ $(document).ready(function() {
             po += doc.data().刺殺;
             a += doc.data().助殺;
             tc += doc.data().守備機會;
-
             let fp = Math.round(((po + a) / tc) * 1000) / 1000;
             $('#fp').text(fp);
         });
