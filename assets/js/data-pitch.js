@@ -121,7 +121,7 @@ $(document).ready(function() {
         $('select[name="dateFilter"]').empty().append('<option value=\"\">比賽日期<\/option>').show();
         gamefilter.where('比賽年度', '==', yearFilterVal).get().then(querySnapshot => {
             querySnapshot.forEach(doc => {
-                $('select[name="dateFilter"]').append('<option value=\"' + doc.id + '\">' + doc.id + '<\/option>');
+                $('select[name="dateFilter"]').append('<option value=\"' + doc.id + '\">' + doc.id + doc.data().對手 + '<\/option>');
             });
         });
     });
