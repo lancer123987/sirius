@@ -8,11 +8,18 @@ Vue.component('member-menu-item', {
 var mainMenu = new Vue({
     el: '#memberAside',
     data: {
-        menu: [
-            { listMenu: ['Basic', 'data.html?member' + link, 'assets/images/common/icon_member_white.svg'] },
-            { listMenu: ['Attack', 'data-attack.html?member' + link, 'assets/images/common/icon_attack_white.svg'] },
-            { listMenu: ['Defend', 'data-defend.html?member' + link, 'assets/images/common/icon_glove_white.svg'] },
-            { listMenu: ['Pitcher', 'data-pitch.html?member' + link, 'assets/images/common/icon_baseball_white.svg'] }
+        menu: [{
+                listMenu: ['Basic', 'data.html?member' + link, 'assets/images/common/icon_member_white.svg']
+            },
+            {
+                listMenu: ['Attack', 'data-attack.html?member' + link, 'assets/images/common/icon_attack_white.svg']
+            },
+            {
+                listMenu: ['Defend', 'data-defend.html?member' + link, 'assets/images/common/icon_glove_white.svg']
+            },
+            {
+                listMenu: ['Pitcher', 'data-pitch.html?member' + link, 'assets/images/common/icon_baseball_white.svg']
+            }
         ]
     }
 })
@@ -52,7 +59,7 @@ $(document).ready(function() {
                 a += doc.data().助殺;
                 tc += doc.data().守備機會;
 
-                let fp = Math.round(((po + a) / tc) * 1000) / 1000;
+                let fp = rounding((po + a) / tc);
                 $('#fp').text(fp);
             });
         });

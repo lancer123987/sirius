@@ -8,11 +8,18 @@ Vue.component('member-menu-item', {
 var mainMenu = new Vue({
     el: '#memberAside',
     data: {
-        menu: [
-            { listMenu: ['Basic', 'data.html?member' + link, 'assets/images/common/icon_member_white.svg'] },
-            { listMenu: ['Attack', 'data-attack.html?member' + link, 'assets/images/common/icon_attack_white.svg'] },
-            { listMenu: ['Defend', 'data-defend.html?member' + link, 'assets/images/common/icon_glove_white.svg'] },
-            { listMenu: ['Pitcher', 'data-pitch.html?member' + link, 'assets/images/common/icon_baseball_white.svg'] }
+        menu: [{
+                listMenu: ['Basic', 'data.html?member' + link, 'assets/images/common/icon_member_white.svg']
+            },
+            {
+                listMenu: ['Attack', 'data-attack.html?member' + link, 'assets/images/common/icon_attack_white.svg']
+            },
+            {
+                listMenu: ['Defend', 'data-defend.html?member' + link, 'assets/images/common/icon_glove_white.svg']
+            },
+            {
+                listMenu: ['Pitcher', 'data-pitch.html?member' + link, 'assets/images/common/icon_baseball_white.svg']
+            }
         ]
     }
 })
@@ -79,14 +86,14 @@ $(document).ready(function() {
                 fly += doc.data().飛球;
                 roll += doc.data().滾地;
 
-                let avg = Math.round(((h1 + h2 + h3 + hr) / ab) * 1000) / 1000,
-                    obp = Math.round(((h1 + h2 + h3 + hr + bb + deadball) / (ab + bb + deadball)) * 1000) / 1000,
-                    slg = Math.round(((h1 + h2 * 2 + h3 * 3 + hr * 4) / ab) * 1000) / 1000,
-                    slgAvg = Math.round(slg / avg * 1000) / 1000,
-                    kAvg = Math.round(k / ab * 1000) / 1000,
-                    bbAvg = Math.round(bb / pa * 1000) / 1000,
-                    flyRollAvg = Math.round(roll / fly * 1000) / 1000,
-                    ops = Math.round((slg + obp) * 1000) / 1000;
+                let avg = rounding(((h1 + h2 + h3 + hr) / ab)),
+                    obp = rounding(((h1 + h2 + h3 + hr + bb + deadball) / (ab + bb + deadball))),
+                    slg = rounding(((h1 + h2 * 2 + h3 * 3 + hr * 4) / ab)),
+                    slgAvg = rounding(slg / avg),
+                    kAvg = rounding(k / ab),
+                    bbAvg = rounding(bb / pa),
+                    flyRollAvg = rounding(roll / fly),
+                    ops = rounding((slg + obp));
 
                 $('#avg').text(avg);
                 $('#obp').text(obp);
@@ -146,6 +153,7 @@ $(document).ready(function() {
 
     $('select[name="dateFilter"]').change(function() {
         let dateFilterVal = $(this).val();
+        $('#avg,#obp,#slgAvg,#ops,#pa,#ab,#h1,#h2,#h3,#hr,#k,#bb,#kAvg,#bbAvg,#fly,#roll,#flyRollAvg').text('');
 
         db.collection('SiriusMember').doc(link).collection('record').doc(dateFilterVal + '-attack').get().then(doc => {
             let h1 = 0,
@@ -182,14 +190,14 @@ $(document).ready(function() {
             fly += doc.data().飛球;
             roll += doc.data().滾地;
 
-            let avg = Math.round(((h1 + h2 + h3 + hr) / ab) * 1000) / 1000,
-                obp = Math.round(((h1 + h2 + h3 + hr + bb + deadball) / (ab + bb + deadball)) * 1000) / 1000,
-                slg = Math.round(((h1 + h2 * 2 + h3 * 3 + hr * 4) / ab) * 1000) / 1000,
-                slgAvg = Math.round(slg / avg * 1000) / 1000,
-                kAvg = Math.round(k / ab * 1000) / 1000,
-                bbAvg = Math.round(bb / pa * 1000) / 1000,
-                flyRollAvg = Math.round(roll / fly * 1000) / 1000,
-                ops = Math.round((slg + obp) * 1000) / 1000;
+            let avg = rounding(((h1 + h2 + h3 + hr) / ab)),
+                obp = rounding(((h1 + h2 + h3 + hr + bb + deadball) / (ab + bb + deadball))),
+                slg = rounding(((h1 + h2 * 2 + h3 * 3 + hr * 4) / ab)),
+                slgAvg = rounding(slg / avg),
+                kAvg = rounding(k / ab),
+                bbAvg = rounding(bb / pa),
+                flyRollAvg = rounding(roll / fly),
+                ops = rounding((slg + obp));
 
             $('#avg').text(avg);
             $('#obp').text(obp);

@@ -9,11 +9,18 @@ Vue.component('member-menu-item', {
 var mainMenu = new Vue({
     el: '#memberAside',
     data: {
-        menu: [
-            { listMenu: ['Basic', 'data.html?member' + link, 'assets/images/common/icon_member_white.svg'] },
-            { listMenu: ['Attack', 'data-attack.html?member' + link, 'assets/images/common/icon_attack_white.svg'] },
-            { listMenu: ['Defend', 'data-defend.html?member' + link, 'assets/images/common/icon_glove_white.svg'] },
-            { listMenu: ['Pitcher', 'data-pitch.html?member' + link, 'assets/images/common/icon_baseball_white.svg'] }
+        menu: [{
+                listMenu: ['Basic', 'data.html?member' + link, 'assets/images/common/icon_member_white.svg']
+            },
+            {
+                listMenu: ['Attack', 'data-attack.html?member' + link, 'assets/images/common/icon_attack_white.svg']
+            },
+            {
+                listMenu: ['Defend', 'data-defend.html?member' + link, 'assets/images/common/icon_glove_white.svg']
+            },
+            {
+                listMenu: ['Pitcher', 'data-pitch.html?member' + link, 'assets/images/common/icon_baseball_white.svg']
+            }
         ]
     }
 })
@@ -53,12 +60,12 @@ $(document).ready(function() {
             deadball += doc.data().觸身;
             ab += doc.data().打數;
 
-            let avg = Math.round(((h1 + h2 + h3 + hr) / ab) * 1000) / 1000,
-                obp = Math.round(((h1 + h2 + h3 + hr + bb + deadball) / (ab + bb + deadball)) * 1000) / 1000,
-                slg = Math.round(((h1 + h2 * 2 + h3 * 3 + hr * 4) / ab) * 1000) / 1000,
-                slgAvg = Math.round(slg / avg * 1000) / 1000,
-                ops = slg + obp;
-            console.log(avg);
+            let avg = rounding((h1 + h2 + h3 + hr) / ab),
+                obp = rounding((h1 + h2 + h3 + hr + bb + deadball) / (ab + bb + deadball)),
+                slg = rounding((h1 + h2 * 2 + h3 * 3 + hr * 4) / ab),
+                slgAvg = rounding(slg / avg),
+                ops = rounding(slg + obp);
+
             $('#avg').text(avg);
             $('#obp').text(obp);
             $('#slgAvg').text(slgAvg);
@@ -88,10 +95,10 @@ $(document).ready(function() {
             hr += doc.data().全壘打;
             er += doc.data().責失;
 
-            let era = Math.round((er / ip) * 9 * 1000) / 1000,
-                k9 = Math.round(k / ip * 9 * 1000) / 1000,
-                bb9 = Math.round(((bb + deadball) / ip) * 9 * 1000) / 1000,
-                whip = Math.round(((h1 + h2 + h3 + hr + bb + deadball) / ip) * 1000) / 1000;
+            let era = rounding((er / ip) * 9),
+                k9 = rounding(k / ip * 9),
+                bb9 = rounding(((bb + deadball) / ip) * 9),
+                whip = rounding((h1 + h2 + h3 + hr + bb + deadball) / ip);
 
             $('#era').text(era);
             $('#whip').text(whip);
@@ -109,7 +116,7 @@ $(document).ready(function() {
             po += doc.data().刺殺;
             a += doc.data().助殺;
             tc += doc.data().守備機會;
-            let fp = Math.round(((po + a) / tc) * 1000) / 1000;
+            let fp = rounding((po + a) / tc);
             $('#fp').text(fp);
         });
     });

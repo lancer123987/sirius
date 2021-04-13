@@ -8,11 +8,18 @@ Vue.component('member-menu-item', {
 var mainMenu = new Vue({
     el: '#memberAside',
     data: {
-        menu: [
-            { listMenu: ['Basic', 'data.html?member' + link, 'assets/images/common/icon_member_white.svg'] },
-            { listMenu: ['Attack', 'data-attack.html?member' + link, 'assets/images/common/icon_attack_white.svg'] },
-            { listMenu: ['Defend', 'data-defend.html?member' + link, 'assets/images/common/icon_glove_white.svg'] },
-            { listMenu: ['Pitcher', 'data-pitch.html?member' + link, 'assets/images/common/icon_baseball_white.svg'] }
+        menu: [{
+                listMenu: ['Basic', 'data.html?member' + link, 'assets/images/common/icon_member_white.svg']
+            },
+            {
+                listMenu: ['Attack', 'data-attack.html?member' + link, 'assets/images/common/icon_attack_white.svg']
+            },
+            {
+                listMenu: ['Defend', 'data-defend.html?member' + link, 'assets/images/common/icon_glove_white.svg']
+            },
+            {
+                listMenu: ['Pitcher', 'data-pitch.html?member' + link, 'assets/images/common/icon_baseball_white.svg']
+            }
         ]
     }
 })
@@ -70,11 +77,11 @@ $(document).ready(function() {
                 bad += doc.data().壞球數;
                 er += doc.data().責失;
 
-                let era = Math.round((er / ip) * 9 * 1000) / 1000,
-                    k9 = Math.round(k / ip * 9 * 1000) / 1000,
-                    bb9 = Math.round(((bb + deadball) / ip) * 9 * 1000) / 1000,
-                    whip = Math.round(((h1 + h2 + h3 + hr + bb + deadball) / ip) * 1000) / 1000,
-                    strikeAvg = Math.round(strike / (strike + bad) * 1000) / 1000;
+                let era = rounding((er / ip) * 9),
+                    k9 = rounding(k / ip * 9),
+                    bb9 = rounding(((bb + deadball) / ip) * 9),
+                    whip = rounding((h1 + h2 + h3 + hr + bb + deadball) / ip),
+                    strikeAvg = rounding(strike / (strike + bad));
 
                 $('#era').text(era);
                 $('#whip').text(whip);
@@ -126,8 +133,8 @@ $(document).ready(function() {
         });
     });
     $('select[name="dateFilter"]').change(function() {
+        $('#era,#whip,#k9,#bb9,#strike,#bad,#strikeAvg,#h1,#h2,#h3,#hr,#k,#bb').text('');
         let dateFilterVal = $(this).val();
-
         db.collection('SiriusMember').doc(link).collection('record').doc(dateFilterVal + '-pitch').get().then(doc => {
             let ip = 0,
                 k = 0,
@@ -153,11 +160,12 @@ $(document).ready(function() {
             bad += doc.data().壞球數;
             er += doc.data().責失;
 
-            let era = Math.round((er / ip) * 9 * 1000) / 1000,
-                k9 = Math.round(k / ip * 9 * 1000) / 1000,
-                bb9 = Math.round(((bb + deadball) / ip) * 9 * 1000) / 1000,
-                whip = Math.round(((h1 + h2 + h3 + hr + bb + deadball) / ip) * 1000) / 1000,
-                strikeAvg = Math.round(strike / (strike + bad) * 1000) / 1000;
+
+            let era = rounding((er / ip) * 9),
+                k9 = rounding(k / ip * 9),
+                bb9 = rounding(((bb + deadball) / ip) * 9),
+                whip = rounding((h1 + h2 + h3 + hr + bb + deadball) / ip),
+                strikeAvg = rounding(strike / (strike + bad));
 
             $('#era').text(era);
             $('#whip').text(whip);

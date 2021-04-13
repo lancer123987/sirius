@@ -1,3 +1,8 @@
+//函數庫
+function rounding(i) {
+    return Math.round((i) * 1000) / 1000;
+}
+
 //logo
 Vue.component('logo', {
     template: '<a href="index.html"><img src="assets/images/common/logo_word.svg" alt="Sirius"></a>'
@@ -16,11 +21,18 @@ Vue.component('menu-item', {
 var mainMenu = new Vue({
     el: '#mainMenu',
     data: {
-        menu: [
-            { listMenu: ['Game', 'game.html'] },
-            { listMenu: ['Member', 'member.html'] },
-            { listMenu: ['About', 'about.html'] },
-            { listMenu: ['Login', 'login.html'] }
+        menu: [{
+                listMenu: ['Game', 'game.html']
+            },
+            {
+                listMenu: ['Member', 'member.html']
+            },
+            {
+                listMenu: ['About', 'about.html']
+            },
+            {
+                listMenu: ['Login', 'login.html']
+            }
         ]
     }
 })
