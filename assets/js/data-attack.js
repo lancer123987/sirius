@@ -85,6 +85,8 @@ $(document).ready(function() {
                 pa += doc.data().打席;
                 fly += doc.data().飛球;
                 roll += doc.data().滾地;
+                rib += doc.data().打點;
+                r += doc.data().得分;
 
                 let avg = rounding(((h1 + h2 + h3 + hr) / ab)),
                     obp = rounding(((h1 + h2 + h3 + hr + bb + deadball) / (ab + bb + deadball))),
@@ -107,6 +109,8 @@ $(document).ready(function() {
                 $('#h2').text(h2);
                 $('#h3').text(h3);
                 $('#hr').text(hr);
+                $('#rib').text(rib);
+                $('#r').text(r);
 
                 $('#k').text(k);
                 $('#bb').text(bb);
@@ -189,6 +193,8 @@ $(document).ready(function() {
             pa += doc.data().打席;
             fly += doc.data().飛球;
             roll += doc.data().滾地;
+            rib += doc.data().打點;
+            r += doc.data().得分;
 
             let avg = rounding(((h1 + h2 + h3 + hr) / ab)),
                 obp = rounding(((h1 + h2 + h3 + hr + bb + deadball) / (ab + bb + deadball))),
@@ -211,6 +217,8 @@ $(document).ready(function() {
             $('#h2').text(h2);
             $('#h3').text(h3);
             $('#hr').text(hr);
+            $('#rib').text(rib);
+            $('#r').text(r);
 
             $('#k').text(k);
             $('#bb').text(bb);
