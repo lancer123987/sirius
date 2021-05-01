@@ -104,14 +104,11 @@ $(document).ready(function() {
         function hitterIdChange(i) {
             if (hitterId.length === 1) {
                 hitterId = "0" + hitterId;
-                console.log(hitterId);
                 return hitterId;
             }
         }
 
         hitterIdChange(hitterId);
-
-        console.log(hitterId + 'haha');
 
         db.collection("game").doc(docName).collection(roundName).doc('hitter' + hitterId).set({
             投手: pitcher,
