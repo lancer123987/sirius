@@ -109,15 +109,13 @@ $(document).ready(function() {
             $('select[name="dateFilter"]').empty().append('<option value=\"\">比賽日期<\/option>').hide();
             pitchAll();
         } else {
-            $('select[name="yearFilter"]').show();
-            let gameType = db.collection('gameType');
-            gameType.get().then(querySnapshot => {
-                querySnapshot.forEach(doc => {
-                    let year = doc.data().year;
-                    for (var i = 0; i < year.length; i++) {
-                        $('select[name="yearFilter"]').append('<option value=\"' + year[i] + '\">' + year[i] + '<\/option>');
-                    }
-                });
+            $('select[name="yearFilter"]').empty().append('<option value=\"\">比賽年度<\/option>').show();
+            let gameType = db.collection('gameType').doc(dataFilterVal);
+            gameType.get().then(doc => {
+                let year = doc.data().year;
+                for (var i = 0; i < year.length; i++) {
+                    $('select[name="yearFilter"]').append('<option value=\"' + year[i] + '\">' + year[i] + '<\/option>');
+                }
             });
         }
     });
