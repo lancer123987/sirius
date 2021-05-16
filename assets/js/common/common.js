@@ -1,4 +1,20 @@
 //函數庫
+
+//選單固定
+function headerFix() {
+    let before = $(window).scrollTop();
+    $(window).scroll(function() {
+        let after = $(this).scrollTop();
+        if (before < after) {
+            $('header').addClass('hide');
+            before = after;
+        } else {
+            $('header').removeClass('hide');
+        };
+    });
+}
+
+//四捨五入
 function rounding(i) {
     return Math.round((i) * 1000) / 1000;
 }
@@ -52,6 +68,11 @@ var db = firebase.firestore();
 
 
 $(document).ready(function() {
+    //選單固定
+    headerFix();
+    $(window).scroll(function() {
+        headerFix();
+    });
     $('.c-aside__bt').click(function() {
         $(this).parent('.c-aside').toggleClass('open');
     });
