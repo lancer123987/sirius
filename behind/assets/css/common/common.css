@@ -7,6 +7,7 @@
     --menuBg: rgba(255, 255, 255, .1);
     --yellow: #FFB11B;
     --brown: #E2CDA1;
+    --mainBg: url(../../images/common/c-texture.png) center repeat #1F2847;
 }
 
 
@@ -137,7 +138,8 @@ a {
 /****共用樣式****/
 
 body {
-    background: var(--main);
+    background: url(../../images/common/c-texture.png) center repeat #1F2847;
+    background-size: 128px 128px;
     color: #fff;
     font-family: 'NotoSansTC', Helvetica, sans-serif
 }
